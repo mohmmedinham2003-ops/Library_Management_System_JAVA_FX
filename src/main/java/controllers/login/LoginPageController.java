@@ -27,7 +27,8 @@ public class LoginPageController {
 
     @FXML
     void btnClearOnAction(ActionEvent event) {
-
+    txtUserName.clear();
+    txtPassword.clear();
     }
 
     @FXML
