@@ -2,7 +2,10 @@ package controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 public class MainDashboardController {
 
@@ -32,7 +35,9 @@ public class MainDashboardController {
 
     @FXML
     void btnAddBooksOnAction(ActionEvent event) {
-
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/add_book_page.fxml"))));
+        stage.show();
     }
 
     @FXML
