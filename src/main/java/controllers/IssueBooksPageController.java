@@ -15,6 +15,9 @@ public class IssueBooksPageController {
     private Button btnIssue;
 
     @FXML
+    private Button btnBack;
+
+    @FXML
     private ComboBox<?> cmbSelectBook;
 
     @FXML
@@ -33,6 +36,11 @@ public class IssueBooksPageController {
 
     @FXML
     void btnIssueOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnBackOnAction(ActionEvent event) {
 
     }
 

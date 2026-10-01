@@ -14,6 +14,9 @@ public class AddMemberPageController {
     private Button btnRegister;
 
     @FXML
+    private Button btnBack;
+
+    @FXML
     private TextField txtAddress;
 
     @FXML
@@ -35,6 +38,11 @@ public class AddMemberPageController {
 
     @FXML
     void btnRegisterOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnBackOnAction(ActionEvent event) {
 
     }
 

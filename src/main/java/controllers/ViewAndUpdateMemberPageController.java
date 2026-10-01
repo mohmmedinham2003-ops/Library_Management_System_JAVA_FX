@@ -15,6 +15,9 @@ public class ViewAndUpdateMemberPageController {
     private Button btnSave;
 
     @FXML
+    private Button btnBack;
+
+    @FXML
     private TableView<?> tblViewUpdateMember;
 
     @FXML
@@ -39,6 +42,11 @@ public class ViewAndUpdateMemberPageController {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnBackOnAction(ActionEvent event) {
 
     }
 

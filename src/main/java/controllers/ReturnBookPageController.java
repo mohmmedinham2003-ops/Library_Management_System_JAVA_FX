@@ -16,6 +16,9 @@ public class ReturnBookPageController {
     private Button btnSave;
 
     @FXML
+    private Button btnBack;
+
+    @FXML
     private DatePicker dtpBorrowedDate;
 
     @FXML
@@ -49,6 +52,11 @@ public class ReturnBookPageController {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnBackOnAction(ActionEvent event) {
 
     }
 

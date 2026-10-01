@@ -11,6 +11,9 @@ public class AddBookPageController {
     private Button btnAdd;
 
     @FXML
+    private Button btnBack;
+
+    @FXML
     private Button btnClear;
 
     @FXML
@@ -38,6 +41,11 @@ public class AddBookPageController {
 
     @FXML
     void btnClearOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnBackOnAction(ActionEvent event) {
 
     }
 
