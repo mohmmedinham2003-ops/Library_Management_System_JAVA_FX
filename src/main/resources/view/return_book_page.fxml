@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="707.0" prefWidth="735.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ReturnBookPageController">
    <children>
       <Pane layoutX="-7.0" layoutY="-7.0" prefHeight="78.0" prefWidth="742.0" style="-fx-background-color: #D8A2A2;">
@@ -20,7 +19,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="67.0" layoutY="140.0" prefHeight="536.0" prefWidth="601.0" style="-fx-background-color: #D8A2A2;">
+      <Pane layoutX="67.0" layoutY="150.0" prefHeight="536.0" prefWidth="601.0" style="-fx-background-color: #D8A2A2;">
          <children>
             <Button fx:id="btnSave" layoutX="501.0" layoutY="459.0" mnemonicParsing="false" onAction="#btnSaveOnAction" text="Save">
                <font>
@@ -87,5 +86,10 @@
             <DatePicker fx:id="dtpReturnedDate" layoutX="212.0" layoutY="332.0" prefHeight="25.0" prefWidth="265.0" />
          </children>
       </Pane>
+      <Button fx:id="btnBack" layoutX="26.0" layoutY="86.0" mnemonicParsing="false" onAction="#btnBackOnAction" text="Back">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

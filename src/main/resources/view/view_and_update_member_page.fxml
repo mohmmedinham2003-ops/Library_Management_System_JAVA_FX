@@ -25,7 +25,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="49.0" layoutY="403.0" prefHeight="361.0" prefWidth="601.0" style="-fx-background-color: #D8A2A2;">
+      <Pane layoutX="49.0" layoutY="423.0" prefHeight="361.0" prefWidth="601.0" style="-fx-background-color: #D8A2A2;">
          <children>
             <Button fx:id="btnSave" layoutX="511.0" layoutY="292.0" mnemonicParsing="false" onAction="#btnSaveOnAction" text="Save">
                <font>
@@ -69,7 +69,7 @@
             <TextField fx:id="txtAddress" layoutX="212.0" layoutY="205.0" prefHeight="25.0" prefWidth="265.0" />
          </children>
       </Pane>
-      <TableView fx:id="tblViewUpdateMember" layoutX="50.0" layoutY="137.0" prefHeight="200.0" prefWidth="601.0">
+      <TableView fx:id="tblViewUpdateMember" layoutX="50.0" layoutY="187.0" prefHeight="200.0" prefWidth="601.0">
         <columns>
           <TableColumn prefWidth="97.0" text="Member Id" />
           <TableColumn prefWidth="96.0" text="Full Name" />
@@ -79,5 +79,10 @@
             <TableColumn prefWidth="136.0" text="Action" />
         </columns>
       </TableView>
+      <Button fx:id="btnBack" layoutX="27.0" layoutY="110.0" mnemonicParsing="false" onAction="#btnBackOnAction" text="Back">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

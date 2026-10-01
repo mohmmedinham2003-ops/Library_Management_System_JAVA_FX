@@ -8,10 +8,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="458.0" prefWidth="694.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.IssueBooksPageController">
+<AnchorPane prefHeight="536.0" prefWidth="694.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.IssueBooksPageController">
    <children>
-      <Pane layoutX="47.0" layoutY="114.0" prefHeight="308.0" prefWidth="601.0" style="-fx-background-color: #D8A2A2;">
+      <Pane layoutX="47.0" layoutY="177.0" prefHeight="308.0" prefWidth="601.0" style="-fx-background-color: #D8A2A2;">
          <children>
             <Button fx:id="btnIssue" layoutX="481.0" layoutY="234.0" mnemonicParsing="false" onAction="#btnIssueOnAction" text="Issue">
                <font>
@@ -58,5 +57,10 @@
             </Label>
          </children>
       </Pane>
+      <Button fx:id="btnBack" layoutX="32.0" layoutY="109.0" mnemonicParsing="false" onAction="#btnBackOnAction" text="Back">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

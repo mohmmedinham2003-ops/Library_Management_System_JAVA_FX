@@ -7,12 +7,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddMemberPageController">
    <children>
-      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="456.0" prefWidth="679.0">
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="615.0" prefWidth="679.0">
          <children>
-            <Pane layoutX="39.0" layoutY="114.0" prefHeight="308.0" prefWidth="601.0" style="-fx-background-color: #D8A2A2;">
+            <Pane layoutX="39.0" layoutY="204.0" prefHeight="308.0" prefWidth="601.0" style="-fx-background-color: #D8A2A2;">
                <children>
                   <Button fx:id="btnRegister" layoutX="491.0" layoutY="253.0" mnemonicParsing="false" onAction="#btnRegisterOnAction" text="Register">
                      <font>
@@ -35,36 +34,41 @@
                   </Label>
                </children>
             </Pane>
-            <Label layoutX="76.0" layoutY="137.0" text="Member ID: ">
+            <Label layoutX="76.0" layoutY="227.0" text="Member ID: ">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="txtMemberId" layoutX="288.0" layoutY="138.0" prefHeight="25.0" prefWidth="265.0" />
-            <Label layoutX="76.0" layoutY="176.0" text="Full Name">
+            <TextField fx:id="txtMemberId" layoutX="288.0" layoutY="228.0" prefHeight="25.0" prefWidth="265.0" />
+            <Label layoutX="76.0" layoutY="266.0" text="Full Name">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="76.0" layoutY="213.0" text="Email: ">
+            <Label layoutX="76.0" layoutY="303.0" text="Email: ">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="76.0" layoutY="252.0" text="Phone Number: ">
+            <Label layoutX="76.0" layoutY="342.0" text="Phone Number: ">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="76.0" layoutY="296.0" text="Address: ">
+            <Label layoutX="76.0" layoutY="386.0" text="Address: ">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="txtAddress" layoutX="288.0" layoutY="297.0" prefHeight="25.0" prefWidth="265.0" />
-            <TextField fx:id="txtPhoneNumber" layoutX="288.0" layoutY="253.0" prefHeight="25.0" prefWidth="265.0" />
-            <TextField fx:id="txtEmail" layoutX="288.0" layoutY="214.0" prefHeight="25.0" prefWidth="265.0" />
-            <TextField fx:id="txtFullName" layoutX="288.0" layoutY="177.0" prefHeight="25.0" prefWidth="265.0" />
+            <TextField fx:id="txtAddress" layoutX="288.0" layoutY="387.0" prefHeight="25.0" prefWidth="265.0" />
+            <TextField fx:id="txtPhoneNumber" layoutX="288.0" layoutY="343.0" prefHeight="25.0" prefWidth="265.0" />
+            <TextField fx:id="txtEmail" layoutX="288.0" layoutY="304.0" prefHeight="25.0" prefWidth="265.0" />
+            <TextField fx:id="txtFullName" layoutX="288.0" layoutY="267.0" prefHeight="25.0" prefWidth="265.0" />
+            <Button fx:id="btnBack" layoutX="25.0" layoutY="134.0" mnemonicParsing="false" onAction="#btnBackOnAction" text="Back">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>
