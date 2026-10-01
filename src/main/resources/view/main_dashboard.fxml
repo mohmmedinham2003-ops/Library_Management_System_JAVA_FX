@@ -15,7 +15,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainDashboardController">
    <children>
       <BorderPane layoutX="1.0" layoutY="-3.0" prefHeight="408.0" prefWidth="600.0">
@@ -39,14 +38,14 @@
                         <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button fx:id="btnHome" mnemonicParsing="false" prefHeight="32.0" prefWidth="205.0" text="Home" GridPane.rowIndex="1" />
-                        <Button fx:id="btnUpdatemembers" layoutX="10.0" layoutY="97.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="205.0" text="Update Members" GridPane.rowIndex="3" />
-                        <Button fx:id="btnAddmembers" layoutX="10.0" layoutY="37.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="205.0" text="Add Members" GridPane.rowIndex="2" />
-                        <Button fx:id="btnAddBooks" layoutX="10.0" layoutY="171.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="205.0" text="Add Books" GridPane.rowIndex="4" />
-                        <Button fx:id="btnIssueBooks" layoutX="10.0" layoutY="211.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="205.0" text="Issue Books" GridPane.rowIndex="5" />
-                        <Button fx:id="btnReturnBooks" layoutX="10.0" layoutY="254.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="205.0" text="Return Books" GridPane.rowIndex="6" />
-                        <Button fx:id="btnBorrowingHistory" layoutX="10.0" layoutY="302.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="205.0" text="Borrowing History" GridPane.rowIndex="7" />
-                        <Button fx:id="btnLogOut" layoutX="10.0" layoutY="302.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="205.0" text="Log Out" GridPane.rowIndex="8" />
+                        <Button fx:id="btnHome" mnemonicParsing="false" onAction="#btnHomeOnAction" prefHeight="32.0" prefWidth="205.0" text="Home" GridPane.rowIndex="1" />
+                        <Button fx:id="btnUpdatemembers" layoutX="10.0" layoutY="97.0" mnemonicParsing="false" onAction="#btnUpdatemembersOnAction" prefHeight="39.0" prefWidth="205.0" text="Update Members" GridPane.rowIndex="3" />
+                        <Button fx:id="btnAddmembers" layoutX="10.0" layoutY="37.0" mnemonicParsing="false" onAction="#btnAddmembersOnAction" prefHeight="32.0" prefWidth="205.0" text="Add Members" GridPane.rowIndex="2" />
+                        <Button fx:id="btnAddBooks" layoutX="10.0" layoutY="171.0" mnemonicParsing="false" onAction="#btnAddBooksOnAction" prefHeight="39.0" prefWidth="205.0" text="Add Books" GridPane.rowIndex="4" />
+                        <Button fx:id="btnIssueBooks" layoutX="10.0" layoutY="211.0" mnemonicParsing="false" onAction="#btnIssueBooksOnAction" prefHeight="41.0" prefWidth="205.0" text="Issue Books" GridPane.rowIndex="5" />
+                        <Button fx:id="btnReturnBooks" layoutX="10.0" layoutY="254.0" mnemonicParsing="false" onAction="#btnReturnBooksOnAction" prefHeight="51.0" prefWidth="205.0" text="Return Books" GridPane.rowIndex="6" />
+                        <Button fx:id="btnBorrowingHistory" layoutX="10.0" layoutY="302.0" mnemonicParsing="false" onAction="#btnBorrowingHistoryOnAction" prefHeight="46.0" prefWidth="205.0" text="Borrowing History" GridPane.rowIndex="7" />
+                        <Button fx:id="btnLogOut" layoutX="10.0" layoutY="302.0" mnemonicParsing="false" onAction="#btnLogOutOnAction" prefHeight="37.0" prefWidth="205.0" text="Log Out" GridPane.rowIndex="8" />
                         <ImageView fitHeight="83.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../images/images.png" />
@@ -66,7 +65,7 @@
          <right>
             <Pane prefHeight="408.0" prefWidth="569.0" BorderPane.alignment="CENTER">
                <children>
-                  <GridPane gridLinesVisible="true" layoutX="82.0" layoutY="204.0" prefHeight="176.0" prefWidth="262.0">
+                  <GridPane gridLinesVisible="true" layoutX="145.0" layoutY="175.0" prefHeight="176.0" prefWidth="262.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
