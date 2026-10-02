@@ -35,23 +35,7 @@ public class MainDashboardController {
     @FXML
     private Button btnUpdatemembers;
 
-    @FXML
-    private Button btnMainAddBooks;
 
-    @FXML
-    private Button btnMainAddmembers;
-
-    @FXML
-    private Button btnMainBorrowingHistory;
-
-    @FXML
-    private Button btnMainIssueBooks;
-
-    @FXML
-    private Button btnMainReturnBooks;
-
-    @FXML
-    private Button btnMainUpdatemembers;
 
 
 
@@ -145,33 +129,17 @@ public class MainDashboardController {
 
     @FXML
     void btnMainAddBooksOnAction(ActionEvent event) {
-
+        Stage stage = new Stage();
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/add_book_page.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
     }
 
-    @FXML
-    void btnMainAddmembersOnAction(ActionEvent event) {
 
-    }
 
-    @FXML
-    void btnMainBorrowingHistoryOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnMainIssueBooksOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnMainReturnBooksOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnMainUpdatemembersOnAction(ActionEvent event) {
-
-    }
 
 
 }
