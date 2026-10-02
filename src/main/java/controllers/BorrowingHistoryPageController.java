@@ -1,22 +1,22 @@
 package controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
-import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 public class BorrowingHistoryPageController {
 
     @FXML
-    private TableView<?> tblBookBorrowingHistory;
+    private Button btnBack;
 
     @FXML
-    private Button btnBack;
+    private TableView<?> tblBookBorrowingHistory;
 
     @FXML
     void btnBackOnAction(ActionEvent event) {
@@ -27,7 +27,6 @@ public class BorrowingHistoryPageController {
             throw new RuntimeException(e);
         }
         stage.show();
-
     }
 
 }
