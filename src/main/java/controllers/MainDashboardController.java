@@ -36,6 +36,26 @@ public class MainDashboardController {
     private Button btnUpdatemembers;
 
     @FXML
+    private Button btnMainAddBooks;
+
+    @FXML
+    private Button btnMainAddmembers;
+
+    @FXML
+    private Button btnMainBorrowingHistory;
+
+    @FXML
+    private Button btnMainIssueBooks;
+
+    @FXML
+    private Button btnMainReturnBooks;
+
+    @FXML
+    private Button btnMainUpdatemembers;
+
+
+
+    @FXML
     void btnAddBooksOnAction(ActionEvent event) {
         Stage stage = new Stage();
         try {
@@ -122,5 +142,36 @@ public class MainDashboardController {
         }
         stage.show();
     }
+
+    @FXML
+    void btnMainAddBooksOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnMainAddmembersOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnMainBorrowingHistoryOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnMainIssueBooksOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnMainReturnBooksOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnMainUpdatemembersOnAction(ActionEvent event) {
+
+    }
+
 
 }
