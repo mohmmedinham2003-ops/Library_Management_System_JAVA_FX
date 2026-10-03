@@ -13,7 +13,12 @@ public class LoginController {
             alert.showAndWait();
             return true;
         }else {
-          return false;
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Authentication Error");
+            alert.setHeaderText("Unauthorized Access");
+            alert.setContentText("The credentials provided do not match our records.");
+            alert.showAndWait();
+            return false;
         }
 
     }
