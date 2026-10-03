@@ -11,8 +11,6 @@ public class LoginController {
         return  false;
     }
 
-
-
     public boolean checkUsernameAndpassword(String name, String password) {
         if (name.equals("inham") && password.equals("1234567890") && checkPassword(password)) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -21,7 +19,6 @@ public class LoginController {
             alert.setContentText("Login successful! Redirecting to dashboard...");
             alert.showAndWait();
             return true;
-
 
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -32,5 +29,4 @@ public class LoginController {
             return false;
         }
     }
-
 }
