@@ -5,14 +5,16 @@ import javafx.scene.control.Alert;
 public class LoginController {
 
     public boolean checkUsernameAndpassword(String name, String password) {
-        if(name.equals("inham") && password.equals("1234")){
+        if (name.equals("inham") && password.equals("1234")) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success");
             alert.setHeaderText(null); // Removes the header space for a cleaner look
             alert.setContentText("Login successful! Redirecting to dashboard...");
             alert.showAndWait();
             return true;
-        }else {
+
+
+        } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Authentication Error");
             alert.setHeaderText("Unauthorized Access");
@@ -20,6 +22,6 @@ public class LoginController {
             alert.showAndWait();
             return false;
         }
-
     }
+
 }
