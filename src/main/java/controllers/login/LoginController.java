@@ -4,8 +4,17 @@ import javafx.scene.control.Alert;
 
 public class LoginController {
 
+    public boolean checkPassword(String password){
+        if(password.length() == 10){
+            return  true;
+        }
+        return  false;
+    }
+
+
+
     public boolean checkUsernameAndpassword(String name, String password) {
-        if (name.equals("inham") && password.equals("1234")) {
+        if (name.equals("inham") && password.equals("1234567890") && checkPassword(password)) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success");
             alert.setHeaderText(null); // Removes the header space for a cleaner look
