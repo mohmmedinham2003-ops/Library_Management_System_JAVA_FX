@@ -18,7 +18,9 @@ public class LoginController {
             alert.setHeaderText(null); // Removes the header space for a cleaner look
             alert.setContentText("Login successful! Redirecting to dashboard...");
             alert.showAndWait();
+
             return true;
+
 
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
