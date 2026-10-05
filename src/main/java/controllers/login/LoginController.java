@@ -17,7 +17,9 @@ public class LoginController {
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
-
+                String dbUsername = resultSet.getString("username");
+                String dbPassword1 = resultSet.getString("password");
+                System.out.println(dbUsername + " " + dbPassword1);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
