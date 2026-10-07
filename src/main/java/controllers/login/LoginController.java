@@ -21,13 +21,15 @@ public class LoginController {
                 String dbUsername = resultSet.getString("username");
                 String dbPassword = resultSet.getString("password");
 
-                System.out.println(dbUsername + " " + dbPassword);
+                if(userName.equals(dbUsername) && password.equals(dbPassword)){
+                    return true;
+                }
             }
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return true;
+        return false;
 
     }
 
