@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MainDashboardController {
+    Stage stage = new Stage();
 
     @FXML
     private Button btnAddBooks;
@@ -41,7 +42,6 @@ public class MainDashboardController {
 
     @FXML
     void btnAddBooksOnAction(ActionEvent event) {
-        Stage stage = new Stage();
         try {
             stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/add_book_page.fxml"))));
         } catch (IOException e) {

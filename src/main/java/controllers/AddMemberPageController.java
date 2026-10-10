@@ -11,6 +11,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class AddMemberPageController {
+    Stage stage = new Stage();
+
 
     @FXML
     private Button btnClear;
@@ -48,7 +50,6 @@ public class AddMemberPageController {
 
     @FXML
     void btnBackOnAction(ActionEvent event) {
-        Stage stage = new Stage();
         try {
             stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/main_dashboard.fxml"))));
         } catch (IOException e) {
