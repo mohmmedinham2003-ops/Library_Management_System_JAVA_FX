@@ -2,11 +2,17 @@ package controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class ViewAndUpdateMemberPageController {
+    Stage stage = new Stage();
 
     @FXML
     private Button btnAddBooks;
@@ -57,42 +63,7 @@ public class ViewAndUpdateMemberPageController {
     private TextField txtPhoneNumber;
 
     @FXML
-    void btnAddBooksOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnAddmembersOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnBorrowingHistoryOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
     void btnClearOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnHomeOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnIssueBooksOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnLogOutOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnReturnBooksOnAction(ActionEvent event) {
 
     }
 
@@ -102,8 +73,94 @@ public class ViewAndUpdateMemberPageController {
     }
 
     @FXML
-    void btnUpdatemembersOnAction(ActionEvent event) {
-
+    void btnAddBooksOnAction(ActionEvent event) {
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/add_book_page.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
     }
+
+    @FXML
+    void btnAddmembersOnAction(ActionEvent event) {
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/add_member_page.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
+    }
+
+    @FXML
+    void btnBorrowingHistoryOnAction(ActionEvent event) {
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/borrowing_history_page.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
+    }
+
+    @FXML
+    void btnHomeOnAction(ActionEvent event) {
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/main_dashboard.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
+    }
+
+    @FXML
+    void btnIssueBooksOnAction(ActionEvent event) {
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/issue_books_page.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
+    }
+
+    @FXML
+    void btnLogOutOnAction(ActionEvent event) {
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/login_page.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
+    }
+
+    @FXML
+    void btnReturnBooksOnAction(ActionEvent event) {
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/return_book_page.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
+    }
+
+    @FXML
+    void btnUpdatemembersOnAction(ActionEvent event) {
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/view_and_update_member_page.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
+    }
+
+    @FXML
+    void btnMainAddBooksOnAction(ActionEvent event) {
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/add_book_page.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
+    }
+
 
 }
