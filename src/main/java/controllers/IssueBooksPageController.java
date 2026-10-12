@@ -14,15 +14,35 @@ import java.io.IOException;
 public class IssueBooksPageController {
     Stage stage = new Stage();
 
+    @FXML
+    private Button btnAddBooks;
+
+    @FXML
+    private Button btnAddmembers;
+
+    @FXML
+    private Button btnBorrowingHistory;
 
     @FXML
     private Button btnClear;
 
     @FXML
+    private Button btnHome;
+
+    @FXML
     private Button btnIssue;
 
     @FXML
-    private Button btnBack;
+    private Button btnIssueBooks;
+
+    @FXML
+    private Button btnLogOut;
+
+    @FXML
+    private Button btnReturnBooks;
+
+    @FXML
+    private Button btnUpdatemembers;
 
     @FXML
     private ComboBox<?> cmbSelectBook;
@@ -36,6 +56,7 @@ public class IssueBooksPageController {
     @FXML
     private DatePicker dtpIssueDate;
 
+
     @FXML
     void btnClearOnAction(ActionEvent event) {
 
@@ -47,14 +68,93 @@ public class IssueBooksPageController {
     }
 
     @FXML
-    void btnBackOnAction(ActionEvent event) {
+    void btnAddBooksOnAction(ActionEvent event) {
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/add_book_page.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
+    }
+
+    @FXML
+    void btnAddmembersOnAction(ActionEvent event) {
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/add_member_page.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
+    }
+
+    @FXML
+    void btnBorrowingHistoryOnAction(ActionEvent event) {
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/borrowing_history_page.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
+    }
+
+    @FXML
+    void btnHomeOnAction(ActionEvent event) {
         try {
             stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/main_dashboard.fxml"))));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
         stage.show();
+    }
 
+    @FXML
+    void btnIssueBooksOnAction(ActionEvent event) {
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/issue_books_page.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
+    }
+
+    @FXML
+    void btnLogOutOnAction(ActionEvent event) {
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/login_page.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
+    }
+
+    @FXML
+    void btnReturnBooksOnAction(ActionEvent event) {
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/return_book_page.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
+    }
+
+    @FXML
+    void btnUpdatemembersOnAction(ActionEvent event) {
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/view_and_update_member_page.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
+    }
+
+    @FXML
+    void btnMainAddBooksOnAction(ActionEvent event) {
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/add_book_page.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
     }
 
 }
