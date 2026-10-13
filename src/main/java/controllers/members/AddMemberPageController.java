@@ -12,7 +12,9 @@ import java.io.IOException;
 
 public class AddMemberPageController {
 AddMemberController addMemberController = new AddMemberController();
-    Stage stage = new Stage();
+Stage stage = new Stage();
+    @FXML
+    private Button btnAdd;
 
     @FXML
     private Button btnAddBooks;
@@ -36,9 +38,6 @@ AddMemberController addMemberController = new AddMemberController();
     private Button btnLogOut;
 
     @FXML
-    private Button btnRegister;
-
-    @FXML
     private Button btnReturnBooks;
 
     @FXML
@@ -54,21 +53,27 @@ AddMemberController addMemberController = new AddMemberController();
     private TextField txtFullName;
 
     @FXML
-    private TextField txtMemberId;
-
-    @FXML
     private TextField txtPhoneNumber;
 
 
     @FXML
-    void btnClearOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnRegisterOnAction(ActionEvent event) {
+    void btnAddOnAction(ActionEvent event) {
         if (addMemberController.addMember(txtFullName.getText(),txtEmail.getText(),txtPhoneNumber.getText(),txtAddress.getText())){
-            System.out.println("Successfully added!!!!");
+            try {
+                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/success_message_page.fxml"))));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            stage.show();
+        }
+        else{
+            try {
+                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/fail_message_page.fxml"))));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            stage.show();
+
         }
     }
 
@@ -162,4 +167,7 @@ AddMemberController addMemberController = new AddMemberController();
         stage.show();
     }
 
+
+    public void btnClearOnAction(ActionEvent actionEvent) {
+    }
 }
