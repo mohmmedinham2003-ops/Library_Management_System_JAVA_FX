@@ -1,4 +1,4 @@
-package controllers;
+package controllers.members;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class AddMemberPageController {
+AddMemberController addMemberController = new AddMemberController();
     Stage stage = new Stage();
 
     @FXML
@@ -66,7 +67,9 @@ public class AddMemberPageController {
 
     @FXML
     void btnRegisterOnAction(ActionEvent event) {
-
+        if (addMemberController.addMember(txtFullName.getText(),txtEmail.getText(),txtPhoneNumber.getText(),txtAddress.getText())){
+            System.out.println("Successfully added!!!!");
+        }
     }
 
     @FXML
