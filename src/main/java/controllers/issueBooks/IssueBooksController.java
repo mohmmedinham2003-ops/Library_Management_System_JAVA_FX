@@ -16,7 +16,7 @@ public class IssueBooksController {
         return false;
     }
 
-    public ObservableList<String> loadMembers(){
+    public ObservableList<String> loadMembers() {
         ObservableList<String> members = FXCollections.observableArrayList();
 
         String SQL = "SELECT full_name FROM members";
@@ -27,7 +27,7 @@ public class IssueBooksController {
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 members.add(resultSet.getString("full_name"));
             }
 
@@ -38,9 +38,23 @@ public class IssueBooksController {
 
     }
 
-    public void loadBooks(){
+    public ObservableList<String> loadBooks() {
+        ObservableList<String> books = FXCollections.observableArrayList();
 
+        String SQL = "SELECT book_title FROM books";
+
+        Connection connection = DBConnection.getInstance().getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                books.add(resultSet.getString("book_title"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return books;
 
     }
-
 }

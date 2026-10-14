@@ -163,19 +163,12 @@ public class IssueBooksPageController implements Initializable {
         stage.show();
     }
 
-    public void loadMembers(){
-        cmbSelectMember.setItems(issueBooksController.loadMembers());
 
-    }
-
-    public void loadBooks(){
-        cmbSelectBook.setItems(issueBooksController.loadMembers());
-
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        loadMembers();
-        loadBooks();
+        cmbSelectMember.setItems(issueBooksController.loadMembers());
+        cmbSelectBook.setItems(issueBooksController.loadBooks());
     }
 }
+
