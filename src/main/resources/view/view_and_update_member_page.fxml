@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="843.0" prefWidth="906.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ViewAndUpdateMemberPageController">
+<AnchorPane prefHeight="843.0" prefWidth="906.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.updateMembers.ViewAndUpdateMemberPageController">
    <children>
       <Label layoutX="246.0" layoutY="34.0" text="ADD Members">
          <font>
