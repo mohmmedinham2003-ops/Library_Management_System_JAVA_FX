@@ -169,5 +169,6 @@ Stage stage = new Stage();
 
 
     public void btnClearOnAction(ActionEvent actionEvent) {
+
     }
 }

@@ -1,4 +1,4 @@
-package controllers;
+package controllers.books;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class AddBookPageController {
+    AddBookController addBookController = new AddBookController();
     Stage stage = new Stage();
 
     @FXML
@@ -63,7 +64,9 @@ public class AddBookPageController {
 
     @FXML
     void btnAddOnAction(ActionEvent event) {
+        if(addBookController.addbook(txtBookTitle.getText(),txtAuthor.getText(),txtCategory.getText(),Integer.parseInt(txtPublishedYear.getText()),Integer.parseInt(txtQuantity.getText()))){
 
+        }
     }
 
 
