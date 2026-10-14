@@ -13,7 +13,6 @@ import java.io.IOException;
 public class AddBookPageController {
     AddBookController addBookController = new AddBookController();
     Stage stage = new Stage();
-
     @FXML
     private Button btnAdd;
 
@@ -48,9 +47,6 @@ public class AddBookPageController {
     private TextField txtAuthor;
 
     @FXML
-    private TextField txtBookId;
-
-    @FXML
     private TextField txtBookTitle;
 
     @FXML
@@ -61,6 +57,7 @@ public class AddBookPageController {
 
     @FXML
     private TextField txtQuantity;
+
 
     @FXML
     void btnAddOnAction(ActionEvent event) {
@@ -178,6 +175,5 @@ public class AddBookPageController {
         }
         stage.show();
     }
-
 
 }

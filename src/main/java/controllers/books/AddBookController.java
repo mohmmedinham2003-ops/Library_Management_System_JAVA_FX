@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class AddBookController {
     public boolean addbook(String book_title, String author, String category, int published_year, int quantity) {
         Connection connection = DBConnection.getInstance().getConnection();
-        String SQL = "INSERT INTO books(book_title,author,category,publisher_year,quantity) VALUES(?, ?, ?, ?, ?)";
+        String SQL = "INSERT INTO books(book_title,author,category,published_year,quantity) VALUES(?, ?, ?, ?, ?)";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
             preparedStatement.setString(1,book_title);
