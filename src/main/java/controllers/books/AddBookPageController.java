@@ -1,4 +1,4 @@
-package controllers;
+package controllers.books;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,8 +11,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class AddBookPageController {
+    AddBookController addBookController = new AddBookController();
     Stage stage = new Stage();
-
     @FXML
     private Button btnAdd;
 
@@ -47,9 +47,6 @@ public class AddBookPageController {
     private TextField txtAuthor;
 
     @FXML
-    private TextField txtBookId;
-
-    @FXML
     private TextField txtBookTitle;
 
     @FXML
@@ -61,9 +58,25 @@ public class AddBookPageController {
     @FXML
     private TextField txtQuantity;
 
+
     @FXML
     void btnAddOnAction(ActionEvent event) {
+        if(addBookController.addbook(txtBookTitle.getText(),txtAuthor.getText(),txtCategory.getText(),Integer.parseInt(txtPublishedYear.getText()),Integer.parseInt(txtQuantity.getText()))){
+            try {
+                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/success_message_page.fxml"))));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            stage.show();
+        }else{
+            try {
+                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/fail_message_page.fxml"))));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            stage.show();
 
+        }
     }
 
 
@@ -162,6 +175,5 @@ public class AddBookPageController {
         }
         stage.show();
     }
-
 
 }

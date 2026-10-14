@@ -17,7 +17,7 @@
 
 <AnchorPane prefHeight="477.0" prefWidth="836.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.IssueBooksPageController">
    <children>
-      <Pane layoutX="216.0" layoutY="132.0" prefHeight="308.0" prefWidth="601.0" style="-fx-background-color: #D8A2A2;">
+      <Pane layoutX="222.0" layoutY="137.0" prefHeight="308.0" prefWidth="601.0" style="-fx-background-color: #D8A2A2;">
          <children>
             <Button fx:id="btnIssue" layoutX="481.0" layoutY="234.0" mnemonicParsing="false" onAction="#btnIssueOnAction" text="Issue">
                <font>

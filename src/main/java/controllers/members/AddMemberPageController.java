@@ -1,4 +1,4 @@
-package controllers;
+package controllers.members;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,7 +11,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class AddMemberPageController {
-    Stage stage = new Stage();
+AddMemberController addMemberController = new AddMemberController();
+Stage stage = new Stage();
+    @FXML
+    private Button btnAdd;
 
     @FXML
     private Button btnAddBooks;
@@ -35,9 +38,6 @@ public class AddMemberPageController {
     private Button btnLogOut;
 
     @FXML
-    private Button btnRegister;
-
-    @FXML
     private Button btnReturnBooks;
 
     @FXML
@@ -53,20 +53,28 @@ public class AddMemberPageController {
     private TextField txtFullName;
 
     @FXML
-    private TextField txtMemberId;
-
-    @FXML
     private TextField txtPhoneNumber;
 
 
     @FXML
-    void btnClearOnAction(ActionEvent event) {
+    void btnAddOnAction(ActionEvent event) {
+        if (addMemberController.addMember(txtFullName.getText(),txtEmail.getText(),txtPhoneNumber.getText(),txtAddress.getText())){
+            try {
+                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/success_message_page.fxml"))));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            stage.show();
+        }
+        else{
+            try {
+                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/fail_message_page.fxml"))));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            stage.show();
 
-    }
-
-    @FXML
-    void btnRegisterOnAction(ActionEvent event) {
-
+        }
     }
 
     @FXML
@@ -159,4 +167,8 @@ public class AddMemberPageController {
         stage.show();
     }
 
+
+    public void btnClearOnAction(ActionEvent actionEvent) {
+
+    }
 }

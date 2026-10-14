@@ -1,4 +1,4 @@
-package controllers;
+package controllers.updateMembers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ViewAndUpdateMemberPageController {
+    ViewAndUpdateController viewAndUpdateController = new ViewAndUpdateController();
     Stage stage = new Stage();
 
     @FXML
@@ -55,9 +56,6 @@ public class ViewAndUpdateMemberPageController {
 
     @FXML
     private TextField txtFullName;
-
-    @FXML
-    private TextField txtMemberId;
 
     @FXML
     private TextField txtPhoneNumber;
@@ -161,6 +159,5 @@ public class ViewAndUpdateMemberPageController {
         }
         stage.show();
     }
-
 
 }

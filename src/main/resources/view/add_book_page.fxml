@@ -14,16 +14,16 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="455.0" prefWidth="807.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddBookPageController">
+<AnchorPane prefHeight="455.0" prefWidth="807.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.books.AddBookPageController">
    <children>
-      <Pane layoutX="238.0" layoutY="91.0" prefHeight="333.0" prefWidth="538.0" style="-fx-background-color: #D8A2A2;">
+      <Pane layoutX="238.0" layoutY="118.0" prefHeight="306.0" prefWidth="538.0" style="-fx-background-color: #D8A2A2;">
          <children>
-            <Button fx:id="btnAdd" layoutX="448.0" layoutY="274.0" mnemonicParsing="false" onAction="#btnAddOnAction" text="Add">
+            <Button fx:id="btnAdd" layoutX="450.0" layoutY="253.0" mnemonicParsing="false" onAction="#btnAddOnAction" text="Add">
                <font>
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="btnClear" layoutX="41.0" layoutY="272.0" mnemonicParsing="false" onAction="#btnClearOnAction" text="Clear">
+            <Button fx:id="btnClear" layoutX="38.0" layoutY="247.0" mnemonicParsing="false" onAction="#btnClearOnAction" text="Clear">
                <font>
                   <Font name="System Bold Italic" size="18.0" />
                </font>
@@ -38,12 +38,6 @@
                </font>
             </Label>
          </children></Pane>
-      <Label layoutX="283.0" layoutY="109.0" text="Book ID: ">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtBookId" layoutX="425.0" layoutY="110.0" prefHeight="25.0" prefWidth="265.0" />
       <Label layoutX="283.0" layoutY="148.0" text="Book Title: ">
          <font>
             <Font size="18.0" />
