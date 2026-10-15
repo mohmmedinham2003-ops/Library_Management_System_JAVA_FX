@@ -24,6 +24,7 @@ public class IssueBooksController {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
+                //members.add(resultSet.getInt("member_id"));
                 members.add(resultSet.getInt("member_id"));
             }
 

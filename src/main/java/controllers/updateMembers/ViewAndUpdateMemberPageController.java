@@ -74,8 +74,9 @@ public class ViewAndUpdateMemberPageController implements Initializable {
     @FXML
     void btnSaveOnAction(ActionEvent event) {
     if(viewAndUpdateController.updateMember(cmbSelectMember.getValue(),txtFullName.getText(),txtEmail.getText(),txtPhoneNumber.getText(),txtAddress.getText())){
-
-
+        System.out.println("success");
+    }else{
+        System.out.println("fail");
     }
     }
 
@@ -171,6 +172,6 @@ public class ViewAndUpdateMemberPageController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        cmbSelectMember.setItems(viewAndUpdateController.loadMembers());
     }
 }
