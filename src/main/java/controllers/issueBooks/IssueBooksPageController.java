@@ -49,10 +49,10 @@ public class IssueBooksPageController implements Initializable {
     private Button btnUpdatemembers;
 
     @FXML
-    private ComboBox<String> cmbSelectBook;
+    private ComboBox<Integer> cmbSelectBook;
 
     @FXML
-    private ComboBox<String> cmbSelectMember;
+    private ComboBox<Integer> cmbSelectMember;
 
     @FXML
     private DatePicker dtpDueDate;
@@ -68,9 +68,13 @@ public class IssueBooksPageController implements Initializable {
 
     @FXML
     void btnIssueOnAction(ActionEvent event) {
-    if (issueBooksController.issuebooks()){
-
+    if (issueBooksController.issuebooks(cmbSelectMember.getValue(),cmbSelectBook.getValue(),dtpIssueDate.getValue(),dtpDueDate.getValue())){
+        System.out.println("Success");
+    }else{
+        System.out.println("fail");
     }
+
+
     }
 
     @FXML
