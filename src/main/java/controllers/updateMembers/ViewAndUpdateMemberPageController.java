@@ -3,15 +3,19 @@ package controllers.updateMembers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class ViewAndUpdateMemberPageController {
+public class ViewAndUpdateMemberPageController implements Initializable {
     ViewAndUpdateController viewAndUpdateController = new ViewAndUpdateController();
     Stage stage = new Stage();
 
@@ -49,6 +53,8 @@ public class ViewAndUpdateMemberPageController {
     private TableView<?> tblViewUpdateMember;
 
     @FXML
+    private ComboBox<Integer> cmbSelectMember;
+    @FXML
     private TextField txtAddress;
 
     @FXML
@@ -67,7 +73,7 @@ public class ViewAndUpdateMemberPageController {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
-    if(viewAndUpdateController.updateMember(txtFullName.getText(),txtEmail.getText(),txtPhoneNumber.getText(),txtAddress.getText())){
+    if(viewAndUpdateController.updateMember(cmbSelectMember.getValue(),txtFullName.getText(),txtEmail.getText(),txtPhoneNumber.getText(),txtAddress.getText())){
 
 
     }
@@ -163,4 +169,8 @@ public class ViewAndUpdateMemberPageController {
         stage.show();
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
 }
