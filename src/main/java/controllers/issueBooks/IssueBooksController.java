@@ -13,6 +13,7 @@ import java.sql.SQLException;
 
 public class IssueBooksController {
     public boolean issuebooks() {
+            Connection connection = DBConnection.getInstance().getConnection();
         return false;
     }
 
