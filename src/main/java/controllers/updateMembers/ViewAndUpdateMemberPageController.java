@@ -5,10 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -48,6 +45,8 @@ public class ViewAndUpdateMemberPageController implements Initializable {
 
     @FXML
     private Button btnUpdatemembers;
+
+
 
     @FXML
     private TableView<?> tblViewUpdateMember;
@@ -173,5 +172,6 @@ public class ViewAndUpdateMemberPageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         cmbSelectMember.setItems(viewAndUpdateController.loadMembers());
+
     }
 }
