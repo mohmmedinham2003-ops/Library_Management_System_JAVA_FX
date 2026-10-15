@@ -67,7 +67,10 @@ public class ViewAndUpdateMemberPageController {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
+    if(viewAndUpdateController.updateMember(txtFullName.getText(),txtEmail.getText(),txtPhoneNumber.getText(),txtAddress.getText())){
 
+
+    }
     }
 
     @FXML
