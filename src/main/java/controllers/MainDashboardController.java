@@ -11,7 +11,6 @@ import scene.SceneManager;
 import java.io.IOException;
 
 public class MainDashboardController {
-    Stage stage = new Stage();
 
     @FXML
     private Button btnAddBooks;
@@ -42,7 +41,7 @@ public class MainDashboardController {
 
     @FXML
     void btnAddBooksOnAction(ActionEvent event) {
-        SceneManager.switchPage("/view/main_dashboard.fxml");
+        SceneManager.switchPage("/view/add_book_page.fxml");
     }
 
     @FXML
@@ -78,11 +77,6 @@ public class MainDashboardController {
     @FXML
     void btnUpdatemembersOnAction(ActionEvent event) {
         SceneManager.switchPage("/view/view_and_update_member_page.fxml");
-    }
-
-    @FXML
-    void btnMainAddBooksOnAction(ActionEvent event) {
-        SceneManager.switchPage("/view/main_dashboard.fxml");
     }
 
 

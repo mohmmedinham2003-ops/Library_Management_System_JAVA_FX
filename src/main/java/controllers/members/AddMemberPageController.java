@@ -77,9 +77,10 @@ Stage stage = new Stage();
 
         }
     }
+
     @FXML
     void btnAddBooksOnAction(ActionEvent event) {
-        SceneManager.switchPage("/view/main_dashboard.fxml");
+        SceneManager.switchPage("/view/add_book_page.fxml");
     }
 
     @FXML
@@ -117,10 +118,8 @@ Stage stage = new Stage();
         SceneManager.switchPage("/view/view_and_update_member_page.fxml");
     }
 
-    @FXML
-    void btnMainAddBooksOnAction(ActionEvent event) {
-        SceneManager.switchPage("/view/main_dashboard.fxml");
-    }
+
+
 
     public void btnClearOnAction(ActionEvent actionEvent) {
 

@@ -69,18 +69,17 @@ public class IssueBooksPageController implements Initializable {
 
     @FXML
     void btnIssueOnAction(ActionEvent event) {
-    if (issueBooksController.issuebooks(cmbSelectMember.getValue(),cmbSelectBook.getValue(),dtpIssueDate.getValue(),dtpDueDate.getValue())){
-        System.out.println("Success");
-    }else{
+        if (issueBooksController.issuebooks(cmbSelectMember.getValue(),cmbSelectBook.getValue(),dtpIssueDate.getValue(),dtpDueDate.getValue())){
+            System.out.println("Success");
+        }else{
         System.out.println("fail");
-    }
-
+        }
 
     }
 
     @FXML
     void btnAddBooksOnAction(ActionEvent event) {
-        SceneManager.switchPage("/view/main_dashboard.fxml");
+        SceneManager.switchPage("/view/add_book_page.fxml");
     }
 
     @FXML
@@ -118,10 +117,7 @@ public class IssueBooksPageController implements Initializable {
         SceneManager.switchPage("/view/view_and_update_member_page.fxml");
     }
 
-    @FXML
-    void btnMainAddBooksOnAction(ActionEvent event) {
-        SceneManager.switchPage("/view/main_dashboard.fxml");
-    }
+
 
 
 
