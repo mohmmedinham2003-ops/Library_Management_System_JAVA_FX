@@ -3,15 +3,16 @@ package controllers.updateMembers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class ViewAndUpdateMemberPageController {
+public class ViewAndUpdateMemberPageController implements Initializable {
     ViewAndUpdateController viewAndUpdateController = new ViewAndUpdateController();
     Stage stage = new Stage();
 
@@ -45,9 +46,13 @@ public class ViewAndUpdateMemberPageController {
     @FXML
     private Button btnUpdatemembers;
 
+
+
     @FXML
     private TableView<?> tblViewUpdateMember;
 
+    @FXML
+    private ComboBox<Integer> cmbSelectMember;
     @FXML
     private TextField txtAddress;
 
@@ -67,7 +72,11 @@ public class ViewAndUpdateMemberPageController {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
-
+    if(viewAndUpdateController.updateMember(cmbSelectMember.getValue(),txtFullName.getText(),txtEmail.getText(),txtPhoneNumber.getText(),txtAddress.getText())){
+        System.out.println("success");
+    }else{
+        System.out.println("fail");
+    }
     }
 
     @FXML
@@ -160,4 +169,9 @@ public class ViewAndUpdateMemberPageController {
         stage.show();
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        cmbSelectMember.setItems(viewAndUpdateController.loadMembers());
+
+    }
 }
