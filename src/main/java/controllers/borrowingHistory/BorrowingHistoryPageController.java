@@ -103,14 +103,14 @@ public class BorrowingHistoryPageController implements Initializable {
     private void borrowingHistoryTable(){
     colMemberId.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("member_id","")));
     colBookTitle.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("book_title","")));
-    colIssueDate.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("book_title","")));
-    colDueDate.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("book_title","")));
-    colReturnDate.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("book_title","")));
+    colIssueDate.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("issue_date","")));
+    colDueDate.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("due_date","")));
+    colReturnDate.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("returned_date","")));
 
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //tblBookBorrowingHistory.setItems(borrowingHistoryController.getHistoryTable());
+        tblBookBorrowingHistory.setItems(borrowingHistoryController.getHistoryTable());
     }
 }
