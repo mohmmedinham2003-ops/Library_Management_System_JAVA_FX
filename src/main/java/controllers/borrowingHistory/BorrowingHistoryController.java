@@ -42,8 +42,13 @@ public class BorrowingHistoryController {
 
             while(resultSet.next()){
                 Map<String, String> row = new HashMap<>();
-                //row.put();
+                row.put("member_id",resultSet.getString("member_id") != null ? resultSet.getString("member_id") : "");
+                row.put("book_title", resultSet.getString("book_title") != null ? resultSet.getString("book_title") : "");
+                row.put("issue_date", resultSet.getString("issue_date") != null ? resultSet.getString("issue_date") : "");
+                row.put("due_date", resultSet.getString("due_date") != null ? resultSet.getString("due_date") : "");
+                row.put("returned_date", resultSet.getString("returned_date") != null ? resultSet.getString("returned_date") : "");
 
+                borrowList.add(row);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

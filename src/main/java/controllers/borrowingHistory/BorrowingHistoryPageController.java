@@ -17,7 +17,6 @@ import java.util.ResourceBundle;
 public class BorrowingHistoryPageController implements Initializable {
     BorrowingHistoryController borrowingHistoryController = new BorrowingHistoryController();
     Stage stage = new Stage();
-
     @FXML
     private Button btnAddBooks;
 
@@ -56,7 +55,6 @@ public class BorrowingHistoryPageController implements Initializable {
 
     @FXML
     private TableColumn<Map<String, String>, String> colMemberId;
-
     @FXML
     private TableColumn<Map<String, String>, String> colReturnDate;
 
@@ -99,18 +97,21 @@ public class BorrowingHistoryPageController implements Initializable {
     void btnUpdatemembersOnAction(ActionEvent event) {
         SceneManager.switchPage("/view/view_and_update_member_page.fxml");
     }
-
     private void borrowingHistoryTable(){
-    colMemberId.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("member_id","")));
-    colBookTitle.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("book_title","")));
-    colIssueDate.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("issue_date","")));
-    colDueDate.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("due_date","")));
-    colReturnDate.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("returned_date","")));
+        colMemberId.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("member_id","")));
+        colBookTitle.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("book_title","")));
+        colIssueDate.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("issue_date","")));
+        colDueDate.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("due_date","")));
+        colReturnDate.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("returned_date","")));
 
     }
 
+
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        borrowingHistoryTable();
         tblBookBorrowingHistory.setItems(borrowingHistoryController.getHistoryTable());
     }
 }
