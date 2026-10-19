@@ -63,7 +63,7 @@ public class ViewAndUpdateMemberPageController implements Initializable {
     private TableColumn<Map<String, String>, String>colFullName;
 
     @FXML
-    private TableColumn<Map<String, Integer>, Integer> colMemberId;
+    private TableColumn<Map<String, String>, String> colMemberId;
     @FXML
     private TableColumn<Map<String, String>, String> colPhoneNumber;
 
@@ -139,7 +139,7 @@ public class ViewAndUpdateMemberPageController implements Initializable {
 
 
     private void initializeColumn(){
-        colMemberId.setCellValueFactory(cell -> new SimpleIntegerProperty(cell.getValue().getOrDefault("member_id", Integer.valueOf("0"))).asObject());
+        colMemberId.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("member_id","")));
         colFullName.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("full_name"," ")));
         colEmail.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("email","")));
         colPhoneNumber.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("phone_number","")));
@@ -152,6 +152,7 @@ public class ViewAndUpdateMemberPageController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         cmbSelectMember.setItems(viewAndUpdateController.loadMembers());
         initializeColumn();
+       tblViewUpdateMember.setItems(viewAndUpdateController.getAllMembers());
 
     }
 }

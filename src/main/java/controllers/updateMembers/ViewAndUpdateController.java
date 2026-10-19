@@ -50,7 +50,7 @@ public class ViewAndUpdateController {
 
     public ObservableList<Map<String, String>> getAllMembers(){
         ObservableList<Map<String, String>> membersList = FXCollections.observableArrayList();
-        String SQL = "SELECT * FROM members ORDER BY member_id DESC";
+        String SQL = "SELECT * FROM members ORDER BY member_id ASC";
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
