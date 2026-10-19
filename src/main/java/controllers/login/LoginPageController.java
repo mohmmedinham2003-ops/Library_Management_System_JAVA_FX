@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import scene.SceneManager;
 
 import java.io.IOException;
 
@@ -37,12 +38,7 @@ public class LoginPageController {
     void btnLoginOnAction(ActionEvent event) {
 
          if(loginController.checkUsernameAndpassword(txtUserName.getText(),txtPassword.getText())){
-             try {
-                 stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/main_dashboard.fxml"))));
-             } catch (IOException e) {
-                 throw new RuntimeException(e);
-             }
-             stage.show();
+           SceneManager.switchPage("/view/main_dashboard.fxml");
 
          }
 
