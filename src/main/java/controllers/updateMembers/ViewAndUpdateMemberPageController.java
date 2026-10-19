@@ -1,5 +1,7 @@
 package controllers.updateMembers;
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +13,7 @@ import scene.SceneManager;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 public class ViewAndUpdateMemberPageController implements Initializable {
@@ -47,13 +50,27 @@ public class ViewAndUpdateMemberPageController implements Initializable {
     @FXML
     private Button btnUpdatemembers;
 
-
-
-    @FXML
-    private TableView<?> tblViewUpdateMember;
-
     @FXML
     private ComboBox<Integer> cmbSelectMember;
+
+    @FXML
+    private TableColumn<Map<String, String>, String> colAddress;
+
+    @FXML
+    private TableColumn<Map<String, String>, String>colEmail;
+
+    @FXML
+    private TableColumn<Map<String, String>, String>colFullName;
+
+    @FXML
+    private TableColumn<Map<String, Integer>, Integer> colMemberId;
+    @FXML
+    private TableColumn<Map<String, String>, String> colPhoneNumber;
+
+    @FXML
+    private TableView<Map<String, String>> tblViewUpdateMember;
+
+
     @FXML
     private TextField txtAddress;
 
@@ -121,6 +138,14 @@ public class ViewAndUpdateMemberPageController implements Initializable {
     }
 
 
+    private void initializeColumn(){
+        colMemberId.setCellValueFactory(cell -> new SimpleIntegerProperty(cell.getValue().getOrDefault("member_id", Integer.valueOf("0"))).asObject());
+        colFullName.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("full_name"," ")));
+        colEmail.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("email","")));
+        colPhoneNumber.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("phone_number","")));
+        colAddress.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("address","")));
+
+    }
 
 
     @Override
