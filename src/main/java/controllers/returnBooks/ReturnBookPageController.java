@@ -64,10 +64,10 @@ public class ReturnBookPageController implements Initializable {
     private TextField txtFullName;
 
     @FXML
-    private ComboBox<?> cmbBookId;
+    private ComboBox<Integer> cmbBookId;
 
     @FXML
-    private ComboBox<?> cmbMemberId;
+    private ComboBox<Integer> cmbMemberId;
 
     @FXML
     private TextField txtPhoneNumber;
@@ -130,6 +130,9 @@ public class ReturnBookPageController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        cmbBookId.setItems(returnBookController.getAllBooks());
+        cmbMemberId.setItems((returnBookController.loadMembers()));
+
 
     }
 }
