@@ -1,5 +1,6 @@
 package controllers.returnBooks;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -138,6 +139,7 @@ public class ReturnBookPageController implements Initializable {
        dtpDueDate.setValue(dueDate);
 
     }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
