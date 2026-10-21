@@ -142,8 +142,14 @@ public class ReturnBookPageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         cmbBookId.setItems(returnBookController.getAllBooks());
-        cmbMemberId.setItems((returnBookController.loadMembers()));
+        cmbMemberId.setItems(returnBookController.loadMembers());
 
+        cmbBookId.setOnAction(event -> {
+            Integer bookId = cmbBookId.getValue();
 
+            if (bookId != null) {
+                returnBookController.loadBorrowList(bookId, this);
+            }
+        });
     }
 }

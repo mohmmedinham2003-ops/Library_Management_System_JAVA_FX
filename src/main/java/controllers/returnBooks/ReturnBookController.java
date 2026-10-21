@@ -11,7 +11,6 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 
 public class ReturnBookController {
-
     Connection connection = DBConnection.getInstance().getConnection();
 
     public boolean returnBooks(Object book_id, Object member_id, String full_name, String phone_number, String address, LocalDate borrowed_date, LocalDate due_date, LocalDate returned_date) {
@@ -52,7 +51,7 @@ public class ReturnBookController {
 
     }
 
-    public void loadBorrowList(int book_id){
+    public void loadBorrowList(int book_id, ReturnBookPageController returnBookPageController){
         String SQL = """
                 SELECT 
                     m.member_id,
@@ -74,13 +73,15 @@ public class ReturnBookController {
 
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
+            returnBookPageController.fillBorrowingDetails(
+                    resultSet.getInt("member_id"),
+                    resultSet.getString("full_name"),
+                    resultSet.getString("phone_number"),
+                    resultSet.getString("address"),
+                    resultSet.getDate("issue_date").toLocalDate(),
+                    resultSet.getDate("due_date").toLocalDate()
 
-                resultSet.getInt("member_id");
-                resultSet.getString("full_name");
-                resultSet.getString("phone_number");
-                resultSet.getString("address");
-                resultSet.getDate("issue_date").toLocalDate();
-                resultSet.getDate("due_date").toLocalDate();
+            );
 
             }
         } catch (SQLException e) {
