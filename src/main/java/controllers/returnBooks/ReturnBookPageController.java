@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import scene.SceneManager;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class ReturnBookPageController implements Initializable {
@@ -126,6 +127,16 @@ public class ReturnBookPageController implements Initializable {
     @FXML
     void btnUpdatemembersOnAction(ActionEvent event) {
         SceneManager.switchPage("/view/view_and_update_member_page.fxml");
+    }
+
+    public void fillBorrowingDetails( int memberId, String fullName, String phoneNumber, String address, LocalDate borrowedDate, LocalDate dueDate){
+       cmbMemberId.setValue(memberId);
+       txtFullName.setText(fullName);
+       txtPhoneNumber.setText(phoneNumber);
+       txtAddress.setText(address);
+       dtpBorrowedDate.setValue(borrowedDate);
+       dtpDueDate.setValue(dueDate);
+
     }
 
     @Override
