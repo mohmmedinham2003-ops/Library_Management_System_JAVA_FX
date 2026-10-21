@@ -1,20 +1,18 @@
-package controllers;
+package controllers.returnBooks;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import scene.SceneManager;
 
-import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class ReturnBookPageController {
+public class ReturnBookPageController implements Initializable {
     Stage stage = new Stage();
+    ReturnBookController returnBookController = new ReturnBookController();
 
     @FXML
     private Button btnAddBooks;
@@ -61,14 +59,15 @@ public class ReturnBookPageController {
     @FXML
     private TextField txtAddress;
 
-    @FXML
-    private TextField txtBookId;
 
     @FXML
     private TextField txtFullName;
 
     @FXML
-    private TextField txtMemberId;
+    private ComboBox<Integer> cmbBookId;
+
+    @FXML
+    private ComboBox<Integer> cmbMemberId;
 
     @FXML
     private TextField txtPhoneNumber;
@@ -81,7 +80,11 @@ public class ReturnBookPageController {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
-
+        if(returnBookController.returnBooks(cmbBookId.getValue(),cmbMemberId.getValue(),txtFullName.getText(),txtPhoneNumber.getText(),txtAddress.getText(),dtpBorrowedDate.getValue(),dtpDueDate.getValue(),dtpReturnedDate.getValue())){
+            System.out.println("Success");
+        }else {
+            System.out.println("failed");
+        }
     }
 
 
@@ -125,4 +128,11 @@ public class ReturnBookPageController {
         SceneManager.switchPage("/view/view_and_update_member_page.fxml");
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        cmbBookId.setItems(returnBookController.getAllBooks());
+        cmbMemberId.setItems((returnBookController.loadMembers()));
+
+
+    }
 }
