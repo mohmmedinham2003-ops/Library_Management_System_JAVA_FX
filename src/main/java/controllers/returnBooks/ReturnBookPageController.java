@@ -63,9 +63,6 @@ public class ReturnBookPageController implements Initializable {
 
 
     @FXML
-    private TextField txtFullName;
-
-    @FXML
     private ComboBox<Integer> cmbBookId;
 
     @FXML
@@ -82,7 +79,7 @@ public class ReturnBookPageController implements Initializable {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
-        if(returnBookController.returnBooks(cmbBookId.getValue(),cmbMemberId.getValue(),txtFullName.getText(),txtPhoneNumber.getText(),txtAddress.getText(),dtpBorrowedDate.getValue(),dtpDueDate.getValue(),dtpReturnedDate.getValue())){
+        if(returnBookController.returnBooks(cmbBookId.getValue(),cmbMemberId.getValue(),txtPhoneNumber.getText(),txtAddress.getText(),dtpBorrowedDate.getValue(),dtpDueDate.getValue(),dtpReturnedDate.getValue())){
             System.out.println("Success");
         }else {
             System.out.println("failed");
@@ -130,9 +127,8 @@ public class ReturnBookPageController implements Initializable {
         SceneManager.switchPage("/view/view_and_update_member_page.fxml");
     }
 
-    public void fillBorrowingDetails( int memberId, String fullName, String phoneNumber, String address, LocalDate borrowedDate, LocalDate dueDate){
+    public void fillBorrowingDetails( int memberId, String phoneNumber, String address, LocalDate borrowedDate, LocalDate dueDate){
        cmbMemberId.setValue(memberId);
-       txtFullName.setText(fullName);
        txtPhoneNumber.setText(phoneNumber);
        txtAddress.setText(address);
        dtpBorrowedDate.setValue(borrowedDate);

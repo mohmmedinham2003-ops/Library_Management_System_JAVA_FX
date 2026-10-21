@@ -10,19 +10,18 @@ import java.time.LocalDate;
 public class ReturnBookController {
     Connection connection = DBConnection.getInstance().getConnection();
 
-    public boolean returnBooks(int book_id, int member_id, String full_name, String phone_number, String address, LocalDate borrowed_date, LocalDate due_date, LocalDate returned_date) {
-        String SQL = "INSER INTO returned_books(book_id,member_id,full_name,phone_number,address,borrowed_date,due_date,returned_date) VALUES(?, ?, ?, ?, ?, ?, ?, ?) ";
+    public boolean returnBooks(int book_id, int member_id, String phone_number, String address, LocalDate borrowed_date, LocalDate due_date, LocalDate returned_date) {
+        String SQL = "INSERT INTO returned_books(book_id,member_id,phone_number,address,borrowed_date,due_date,returned_date) VALUES(?, ?, ?, ?, ?, ?, ?) ";
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
             preparedStatement.setInt(1,book_id);
             preparedStatement.setInt(2,member_id);
-            preparedStatement.setString(3,full_name);
-            preparedStatement.setString(4,phone_number);
-            preparedStatement.setString(5,address);
-            preparedStatement.setDate(6, Date.valueOf(borrowed_date));
-            preparedStatement.setDate(7, Date.valueOf(due_date));
-            preparedStatement.setDate(8, Date.valueOf(borrowed_date));
+            preparedStatement.setString(3,phone_number);
+            preparedStatement.setString(4,address);
+            preparedStatement.setDate(5, Date.valueOf(borrowed_date));
+            preparedStatement.setDate(6, Date.valueOf(due_date));
+            preparedStatement.setDate(7, Date.valueOf(borrowed_date));
 
             preparedStatement.executeUpdate();
 
@@ -71,7 +70,6 @@ public class ReturnBookController {
         String SQL = """
                 SELECT 
                     m.member_id,
-                    m.full_name,
                     m.phone_number,
                     m.address,
                     i.issue_date,
@@ -91,7 +89,6 @@ public class ReturnBookController {
             while (resultSet.next()){
             returnBookPageController.fillBorrowingDetails(
                     resultSet.getInt("member_id"),
-                    resultSet.getString("full_name"),
                     resultSet.getString("phone_number"),
                     resultSet.getString("address"),
                     resultSet.getDate("issue_date").toLocalDate(),
