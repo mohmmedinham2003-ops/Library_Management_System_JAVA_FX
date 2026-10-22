@@ -147,6 +147,13 @@ public class ViewAndUpdateMemberPageController implements Initializable {
 
     }
 
+    public void fillUpdateDetails(String full_name,String email,String phone_number,String address){
+    txtFullName.setText(full_name);
+    txtEmail.setText(email);
+    txtPhoneNumber.setText(phone_number);
+    txtAddress.setText(address);
+
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
