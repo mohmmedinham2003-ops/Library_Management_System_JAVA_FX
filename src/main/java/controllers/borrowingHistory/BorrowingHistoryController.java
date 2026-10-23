@@ -33,7 +33,7 @@ public class BorrowingHistoryController {
         LEFT JOIN returned_books r
             ON r.member_id = i.member_id
             AND r.book_id = i.book_id
-        ORDER BY i.issue_date DESC
+        ORDER BY i.issue_date ASC
         """;
 
         try {

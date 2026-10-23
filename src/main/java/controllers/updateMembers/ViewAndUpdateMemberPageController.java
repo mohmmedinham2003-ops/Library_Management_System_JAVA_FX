@@ -161,5 +161,15 @@ public class ViewAndUpdateMemberPageController implements Initializable {
         initializeColumn();
        tblViewUpdateMember.setItems(viewAndUpdateController.getAllMembers());
 
+
+        cmbSelectMember.setOnAction(event -> {
+            Integer memberId = cmbSelectMember.getValue();
+
+            if(memberId != null){
+                viewAndUpdateController.loadUpdateList(memberId, this);
+            }
+
+        });
+
     }
 }

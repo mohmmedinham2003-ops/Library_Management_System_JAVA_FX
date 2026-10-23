@@ -7,7 +7,6 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
@@ -15,73 +14,110 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainDashboardController">
+<AnchorPane prefHeight="611.0" prefWidth="1009.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainDashboardController">
    <children>
-      <BorderPane layoutX="1.0" layoutY="-3.0" prefHeight="408.0" prefWidth="600.0">
-         <left>
-            <VBox alignment="CENTER_LEFT" prefHeight="311.0" prefWidth="205.0" style="-fx-background-color: #E3AFC9;" BorderPane.alignment="CENTER">
+      <GridPane alignment="TOP_CENTER" gridLinesVisible="true" prefHeight="610.0" prefWidth="196.0" style="-fx-background-color: #B1E5E6;">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="343.0" minWidth="10.0" prefWidth="205.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="166.0" minWidth="0.0" prefWidth="0.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="93.0" minHeight="10.0" prefHeight="88.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="88.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="110.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="117.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="152.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="177.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="146.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="btnHome" mnemonicParsing="false" onAction="#btnHomeOnAction" prefHeight="57.0" prefWidth="196.0" style="-fx-background-color: #FEFAF3;" text="Home" GridPane.rowIndex="1" />
+            <Button fx:id="btnUpdatemembers" layoutX="10.0" layoutY="97.0" mnemonicParsing="false" onAction="#btnUpdatemembersOnAction" prefHeight="39.0" prefWidth="205.0" style="-fx-background-color: #B1E5E6;" text="Update Members" GridPane.rowIndex="3" />
+            <Button fx:id="btnAddmembers" layoutX="10.0" layoutY="37.0" mnemonicParsing="false" onAction="#btnAddmembersOnAction" prefHeight="32.0" prefWidth="205.0" style="-fx-background-color: #B1E5E6;" text="Add Members" GridPane.rowIndex="2" />
+            <Button fx:id="btnAddBooks" layoutX="10.0" layoutY="171.0" mnemonicParsing="false" onAction="#btnAddBooksOnAction" prefHeight="39.0" prefWidth="204.0" style="-fx-background-color: #B1E5E6;" text="Add Books" GridPane.rowIndex="4" />
+            <Button fx:id="btnIssueBooks" layoutX="10.0" layoutY="211.0" mnemonicParsing="false" onAction="#btnIssueBooksOnAction" prefHeight="41.0" prefWidth="205.0" style="-fx-background-color: #B1E5E6;" text="Issue Books" GridPane.rowIndex="5" />
+            <Button fx:id="btnReturnBooks" layoutX="10.0" layoutY="254.0" mnemonicParsing="false" onAction="#btnReturnBooksOnAction" prefHeight="51.0" prefWidth="205.0" style="-fx-background-color: #B1E5E6;" text="Return Books" GridPane.rowIndex="6" />
+            <Button fx:id="btnBorrowingHistory" layoutX="10.0" layoutY="302.0" mnemonicParsing="false" onAction="#btnBorrowingHistoryOnAction" prefHeight="46.0" prefWidth="205.0" style="-fx-background-color: #B1E5E6;" text="Borrowing History" GridPane.rowIndex="7" />
+            <Button fx:id="btnLogOut" layoutX="10.0" layoutY="302.0" mnemonicParsing="false" onAction="#btnLogOutOnAction" prefHeight="56.0" prefWidth="196.0" style="-fx-background-color: #FF0000;" text="Log Out" textAlignment="CENTER" GridPane.rowIndex="8" />
+            <ImageView fitHeight="91.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/images.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="50.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </ImageView>
+         </children>
+      </GridPane>
+      <Label layoutX="196.0" layoutY="-3.0" prefHeight="98.0" prefWidth="814.0" style="-fx-background-color: #DE7272;" text="                   Library Managemnet System" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="196.0" layoutY="95.0" prefHeight="32.0" prefWidth="814.0" style="-fx-background-color: #8AD6D1;" text="Dashboard OverView">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Pane layoutX="217.0" layoutY="147.0" prefHeight="160.0" prefWidth="772.0" style="-fx-background-color: #8AD6D1;">
+         <children>
+            <VBox layoutX="22.0" layoutY="21.0" prefHeight="113.0" prefWidth="154.0" spacing="8.0" style="-fx-background-color: #DE7272;" styleClass="stat-card blue-card">
+               <padding>
+                  <Insets bottom="18.0" left="20.0" right="20.0" top="18.0" />
+               </padding>
                <children>
-                  <GridPane alignment="TOP_CENTER" gridLinesVisible="true" prefHeight="408.0" prefWidth="196.0" style="-fx-background-color: #B1E5E6;">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="343.0" minWidth="10.0" prefWidth="205.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="166.0" minWidth="0.0" prefWidth="0.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                        <RowConstraints maxHeight="93.0" minHeight="10.0" prefHeight="88.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="88.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="110.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="117.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="152.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="177.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="146.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                     <children>
-                        <Button fx:id="btnHome" mnemonicParsing="false" onAction="#btnHomeOnAction" prefHeight="32.0" prefWidth="205.0" style="-fx-background-color: #B1E5E6;" text="Home" GridPane.rowIndex="1" />
-                        <Button fx:id="btnUpdatemembers" layoutX="10.0" layoutY="97.0" mnemonicParsing="false" onAction="#btnUpdatemembersOnAction" prefHeight="39.0" prefWidth="205.0" style="-fx-background-color: #B1E5E6;" text="Update Members" GridPane.rowIndex="3" />
-                        <Button fx:id="btnAddmembers" layoutX="10.0" layoutY="37.0" mnemonicParsing="false" onAction="#btnAddmembersOnAction" prefHeight="32.0" prefWidth="205.0" style="-fx-background-color: #B1E5E6;" text="Add Members" GridPane.rowIndex="2" />
-                        <Button fx:id="btnAddBooks" layoutX="10.0" layoutY="171.0" mnemonicParsing="false" onAction="#btnAddBooksOnAction" prefHeight="39.0" prefWidth="204.0" style="-fx-background-color: #B1E5E6;" text="Add Books" GridPane.rowIndex="4" />
-                        <Button fx:id="btnIssueBooks" layoutX="10.0" layoutY="211.0" mnemonicParsing="false" onAction="#btnIssueBooksOnAction" prefHeight="41.0" prefWidth="205.0" style="-fx-background-color: #B1E5E6;" text="Issue Books" GridPane.rowIndex="5" />
-                        <Button fx:id="btnReturnBooks" layoutX="10.0" layoutY="254.0" mnemonicParsing="false" onAction="#btnReturnBooksOnAction" prefHeight="51.0" prefWidth="205.0" style="-fx-background-color: #B1E5E6;" text="Return Books" GridPane.rowIndex="6" />
-                        <Button fx:id="btnBorrowingHistory" layoutX="10.0" layoutY="302.0" mnemonicParsing="false" onAction="#btnBorrowingHistoryOnAction" prefHeight="46.0" prefWidth="205.0" style="-fx-background-color: #B1E5E6;" text="Borrowing History" GridPane.rowIndex="7" />
-                        <Button fx:id="btnLogOut" layoutX="10.0" layoutY="302.0" mnemonicParsing="false" onAction="#btnLogOutOnAction" prefHeight="32.0" prefWidth="210.0" style="-fx-background-color: #FF0000;" text="Log Out" textAlignment="CENTER" GridPane.rowIndex="8" />
-                        <ImageView fitHeight="83.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/images.png" />
-                           </image>
-                           <cursor>
-                              <Cursor fx:constant="DEFAULT" />
-                           </cursor>
-                           <GridPane.margin>
-                              <Insets bottom="5.0" left="50.0" right="5.0" top="5.0" />
-                           </GridPane.margin>
-                        </ImageView>
-                     </children>
-                  </GridPane>
+                  <Label styleClass="card-label" text="TOTAL MEMBERS" />
+                  <Label fx:id="lblTotalMembers" styleClass="card-number" text="0" />
+                  <Pane prefHeight="200.0" prefWidth="200.0" />
+                  <Label styleClass="card-description" text="Registered members" />
                </children>
             </VBox>
-         </left>
-         <right>
-            <Pane prefHeight="408.0" prefWidth="538.0" BorderPane.alignment="CENTER">
+            <VBox layoutX="221.0" layoutY="19.0" prefHeight="113.0" prefWidth="154.0" spacing="8.0" style="-fx-background-color: #DE7272;" styleClass="stat-card blue-card">
+               <padding>
+                  <Insets bottom="18.0" left="20.0" right="20.0" top="18.0" />
+               </padding>
                <children>
-                  <Pane prefHeight="87.0" prefWidth="539.0" style="-fx-background-color: #E3AFC9;">
-                     <children>
-                        <Label alignment="CENTER" layoutX="52.0" layoutY="25.0" prefHeight="38.0" prefWidth="436.0" text="     Library Management System" textOverrun="WORD_ELLIPSIS">
-                           <font>
-                              <Font name="Arial Nova Cond Bold Italic" size="30.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-                  <ImageView fitHeight="322.0" fitWidth="527.0" layoutX="2.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/library-management.jpg" />
-                     </image>
-                  </ImageView>
+                  <Label styleClass="card-label" text="TOTAL BOOKS" />
+                  <Label fx:id="lblTotalBooks" styleClass="card-number" text="0" />
+                  <Label styleClass="card-description" text="Registered books" />
                </children>
-            </Pane>
-         </right>
-      </BorderPane>
+            </VBox>
+            <VBox layoutX="409.0" layoutY="21.0" prefHeight="113.0" prefWidth="154.0" spacing="8.0" style="-fx-background-color: #DE7272;" styleClass="stat-card blue-card">
+               <padding>
+                  <Insets bottom="18.0" left="20.0" right="20.0" top="18.0" />
+               </padding>
+               <children>
+                  <Label prefHeight="17.0" prefWidth="129.0" styleClass="card-label" text="ISSUED BOOKS" />
+                  <Label fx:id="lblTotalIssueBooks" styleClass="card-number" text="0" />
+                  <Label styleClass="card-description" text="total issued books" />
+               </children>
+            </VBox>
+            <VBox layoutX="596.0" layoutY="21.0" prefHeight="113.0" prefWidth="154.0" spacing="8.0" style="-fx-background-color: #DE7272;" styleClass="stat-card blue-card">
+               <padding>
+                  <Insets bottom="18.0" left="20.0" right="20.0" top="18.0" />
+               </padding>
+               <children>
+                  <Label styleClass="card-label" text="RETURNED BOOKS" />
+                  <Label fx:id="lblTotalReturnedBooks" styleClass="card-number" text="0" />
+                  <Label styleClass="card-description" text="all returned books" />
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <Pane layoutX="217.0" layoutY="326.0" prefHeight="57.0" prefWidth="772.0" style="-fx-background-color: #DE7272;">
+         <children>
+            <Button fx:id="btnAddmembers1" layoutX="22.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnAddmembersOnAction" prefHeight="32.0" prefWidth="97.0" style="-fx-background-color: #B1E5E6;" text="Add Members" />
+            <Button fx:id="btnUpdatemembers1" layoutX="137.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnUpdatemembersOnAction" prefHeight="32.0" prefWidth="110.0" style="-fx-background-color: #B1E5E6;" text="Update Members" />
+            <Button fx:id="btnAddBooks1" layoutX="261.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnAddBooksOnAction" prefHeight="32.0" prefWidth="110.0" style="-fx-background-color: #B1E5E6;" text="Add Books" />
+            <Button fx:id="btnIssueBooks1" layoutX="385.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnIssueBooksOnAction" prefHeight="32.0" prefWidth="114.0" style="-fx-background-color: #B1E5E6;" text="Issue Books" />
+            <Button fx:id="btnReturnBooks1" layoutX="517.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnReturnBooksOnAction" prefHeight="32.0" prefWidth="101.0" style="-fx-background-color: #B1E5E6;" text="Return Books" />
+            <Button fx:id="btnBorrowingHistory1" layoutX="635.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnBorrowingHistoryOnAction" prefHeight="32.0" prefWidth="114.0" style="-fx-background-color: #B1E5E6;" text="Borrowing History" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

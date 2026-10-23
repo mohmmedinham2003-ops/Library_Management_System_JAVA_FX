@@ -72,6 +72,35 @@ public class ViewAndUpdateController {
         return membersList;
     }
 
+    public void loadUpdateList(int member_id,ViewAndUpdateMemberPageController viewAndUpdateMemberPageController){
+        String SQL = """
+                SELECT full_name,email,phone_number,address
+                FROM members WHERE
+                member_id = ?
+                """;
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            preparedStatement.setInt(1,member_id);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                viewAndUpdateMemberPageController.fillUpdateDetails(
+                        resultSet.getString("full_name"),
+                        resultSet.getString("email"),
+                        resultSet.getString("phone_number"),
+                        resultSet.getString("address")
+
+                );
+
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
 
 
 }
