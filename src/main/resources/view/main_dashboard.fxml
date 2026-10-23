@@ -7,81 +7,60 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainDashboardController">
+<AnchorPane prefHeight="611.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainDashboardController">
    <children>
-      <BorderPane layoutX="1.0" layoutY="-3.0" prefHeight="408.0" prefWidth="600.0">
-         <left>
-            <VBox alignment="CENTER_LEFT" prefHeight="311.0" prefWidth="205.0" style="-fx-background-color: #E3AFC9;" BorderPane.alignment="CENTER">
-               <children>
-                  <GridPane alignment="TOP_CENTER" gridLinesVisible="true" prefHeight="408.0" prefWidth="196.0" style="-fx-background-color: #B1E5E6;">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="343.0" minWidth="10.0" prefWidth="205.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="166.0" minWidth="0.0" prefWidth="0.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                        <RowConstraints maxHeight="93.0" minHeight="10.0" prefHeight="88.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="88.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="110.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="117.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="152.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="177.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="146.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                     <children>
-                        <Button fx:id="btnHome" mnemonicParsing="false" onAction="#btnHomeOnAction" prefHeight="32.0" prefWidth="205.0" style="-fx-background-color: #B1E5E6;" text="Home" GridPane.rowIndex="1" />
-                        <Button fx:id="btnUpdatemembers" layoutX="10.0" layoutY="97.0" mnemonicParsing="false" onAction="#btnUpdatemembersOnAction" prefHeight="39.0" prefWidth="205.0" style="-fx-background-color: #B1E5E6;" text="Update Members" GridPane.rowIndex="3" />
-                        <Button fx:id="btnAddmembers" layoutX="10.0" layoutY="37.0" mnemonicParsing="false" onAction="#btnAddmembersOnAction" prefHeight="32.0" prefWidth="205.0" style="-fx-background-color: #B1E5E6;" text="Add Members" GridPane.rowIndex="2" />
-                        <Button fx:id="btnAddBooks" layoutX="10.0" layoutY="171.0" mnemonicParsing="false" onAction="#btnAddBooksOnAction" prefHeight="39.0" prefWidth="204.0" style="-fx-background-color: #B1E5E6;" text="Add Books" GridPane.rowIndex="4" />
-                        <Button fx:id="btnIssueBooks" layoutX="10.0" layoutY="211.0" mnemonicParsing="false" onAction="#btnIssueBooksOnAction" prefHeight="41.0" prefWidth="205.0" style="-fx-background-color: #B1E5E6;" text="Issue Books" GridPane.rowIndex="5" />
-                        <Button fx:id="btnReturnBooks" layoutX="10.0" layoutY="254.0" mnemonicParsing="false" onAction="#btnReturnBooksOnAction" prefHeight="51.0" prefWidth="205.0" style="-fx-background-color: #B1E5E6;" text="Return Books" GridPane.rowIndex="6" />
-                        <Button fx:id="btnBorrowingHistory" layoutX="10.0" layoutY="302.0" mnemonicParsing="false" onAction="#btnBorrowingHistoryOnAction" prefHeight="46.0" prefWidth="205.0" style="-fx-background-color: #B1E5E6;" text="Borrowing History" GridPane.rowIndex="7" />
-                        <Button fx:id="btnLogOut" layoutX="10.0" layoutY="302.0" mnemonicParsing="false" onAction="#btnLogOutOnAction" prefHeight="32.0" prefWidth="210.0" style="-fx-background-color: #FF0000;" text="Log Out" textAlignment="CENTER" GridPane.rowIndex="8" />
-                        <ImageView fitHeight="83.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/images.png" />
-                           </image>
-                           <cursor>
-                              <Cursor fx:constant="DEFAULT" />
-                           </cursor>
-                           <GridPane.margin>
-                              <Insets bottom="5.0" left="50.0" right="5.0" top="5.0" />
-                           </GridPane.margin>
-                        </ImageView>
-                     </children>
-                  </GridPane>
-               </children>
-            </VBox>
-         </left>
-         <right>
-            <Pane prefHeight="408.0" prefWidth="538.0" BorderPane.alignment="CENTER">
-               <children>
-                  <Pane prefHeight="87.0" prefWidth="539.0" style="-fx-background-color: #E3AFC9;">
-                     <children>
-                        <Label alignment="CENTER" layoutX="52.0" layoutY="25.0" prefHeight="38.0" prefWidth="436.0" text="     Library Management System" textOverrun="WORD_ELLIPSIS">
-                           <font>
-                              <Font name="Arial Nova Cond Bold Italic" size="30.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-                  <ImageView fitHeight="322.0" fitWidth="527.0" layoutX="2.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/library-management.jpg" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-         </right>
-      </BorderPane>
+      <GridPane alignment="TOP_CENTER" gridLinesVisible="true" prefHeight="610.0" prefWidth="196.0" style="-fx-background-color: #B1E5E6;">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="343.0" minWidth="10.0" prefWidth="205.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="166.0" minWidth="0.0" prefWidth="0.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="93.0" minHeight="10.0" prefHeight="88.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="88.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="110.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="117.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="152.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="177.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="146.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="btnHome" mnemonicParsing="false" onAction="#btnHomeOnAction" prefHeight="57.0" prefWidth="196.0" style="-fx-background-color: #FEFAF3;" text="Home" GridPane.rowIndex="1" />
+            <Button fx:id="btnUpdatemembers" layoutX="10.0" layoutY="97.0" mnemonicParsing="false" onAction="#btnUpdatemembersOnAction" prefHeight="39.0" prefWidth="205.0" style="-fx-background-color: #B1E5E6;" text="Update Members" GridPane.rowIndex="3" />
+            <Button fx:id="btnAddmembers" layoutX="10.0" layoutY="37.0" mnemonicParsing="false" onAction="#btnAddmembersOnAction" prefHeight="32.0" prefWidth="205.0" style="-fx-background-color: #B1E5E6;" text="Add Members" GridPane.rowIndex="2" />
+            <Button fx:id="btnAddBooks" layoutX="10.0" layoutY="171.0" mnemonicParsing="false" onAction="#btnAddBooksOnAction" prefHeight="39.0" prefWidth="204.0" style="-fx-background-color: #B1E5E6;" text="Add Books" GridPane.rowIndex="4" />
+            <Button fx:id="btnIssueBooks" layoutX="10.0" layoutY="211.0" mnemonicParsing="false" onAction="#btnIssueBooksOnAction" prefHeight="41.0" prefWidth="205.0" style="-fx-background-color: #B1E5E6;" text="Issue Books" GridPane.rowIndex="5" />
+            <Button fx:id="btnReturnBooks" layoutX="10.0" layoutY="254.0" mnemonicParsing="false" onAction="#btnReturnBooksOnAction" prefHeight="51.0" prefWidth="205.0" style="-fx-background-color: #B1E5E6;" text="Return Books" GridPane.rowIndex="6" />
+            <Button fx:id="btnBorrowingHistory" layoutX="10.0" layoutY="302.0" mnemonicParsing="false" onAction="#btnBorrowingHistoryOnAction" prefHeight="46.0" prefWidth="205.0" style="-fx-background-color: #B1E5E6;" text="Borrowing History" GridPane.rowIndex="7" />
+            <Button fx:id="btnLogOut" layoutX="10.0" layoutY="302.0" mnemonicParsing="false" onAction="#btnLogOutOnAction" prefHeight="56.0" prefWidth="196.0" style="-fx-background-color: #FF0000;" text="Log Out" textAlignment="CENTER" GridPane.rowIndex="8" />
+            <ImageView fitHeight="91.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/images.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="50.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </ImageView>
+         </children>
+      </GridPane>
+      <Label layoutX="196.0" layoutY="-3.0" prefHeight="98.0" prefWidth="644.0" style="-fx-background-color: #DE7272;" text="              Library Managemnet System" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="196.0" layoutY="95.0" prefHeight="32.0" prefWidth="644.0" style="-fx-background-color: #8AD6D1;" text="Dashboard">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
