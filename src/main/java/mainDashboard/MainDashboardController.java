@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.ResourceBundle;
 
 public class MainDashboardController implements Initializable {
-
+    DashboardController dashboardController = new DashboardController();
     @FXML
     private Button btnAddBooks;
 
@@ -102,7 +102,7 @@ public class MainDashboardController implements Initializable {
 
     public void loadMaintabble(){
         colBookId.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("book_id","")));
-        colBookName.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("book_name","")));
+        colBookName.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("book_title","")));
         colBorrower.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("full_name","")));
         colIssuedate.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("issue_date","")));
         colDueDate.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("due_date","")));
@@ -112,5 +112,6 @@ public class MainDashboardController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadMaintabble();
+        tbllDashboardView.setItems(dashboardController.loadDetails());
     }
 }
