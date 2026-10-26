@@ -66,9 +66,9 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Pane layoutX="217.0" layoutY="147.0" prefHeight="160.0" prefWidth="772.0" style="-fx-background-color: #8AD6D1;">
+      <Pane layoutX="217.0" layoutY="142.0" prefHeight="132.0" prefWidth="772.0" style="-fx-background-color: #8AD6D1;">
          <children>
-            <VBox layoutX="22.0" layoutY="21.0" prefHeight="113.0" prefWidth="154.0" spacing="8.0" style="-fx-background-color: #DE7272;" styleClass="stat-card blue-card">
+            <VBox layoutX="23.0" layoutY="10.0" prefHeight="113.0" prefWidth="154.0" spacing="8.0" style="-fx-background-color: #DE7272;" styleClass="stat-card blue-card">
                <padding>
                   <Insets bottom="18.0" left="20.0" right="20.0" top="18.0" />
                </padding>
@@ -79,7 +79,7 @@
                   <Label styleClass="card-description" text="Registered members" />
                </children>
             </VBox>
-            <VBox layoutX="221.0" layoutY="19.0" prefHeight="113.0" prefWidth="154.0" spacing="8.0" style="-fx-background-color: #DE7272;" styleClass="stat-card blue-card">
+            <VBox layoutX="221.0" layoutY="9.0" prefHeight="113.0" prefWidth="154.0" spacing="8.0" style="-fx-background-color: #DE7272;" styleClass="stat-card blue-card">
                <padding>
                   <Insets bottom="18.0" left="20.0" right="20.0" top="18.0" />
                </padding>
@@ -89,7 +89,7 @@
                   <Label styleClass="card-description" text="Registered books" />
                </children>
             </VBox>
-            <VBox layoutX="409.0" layoutY="21.0" prefHeight="113.0" prefWidth="154.0" spacing="8.0" style="-fx-background-color: #DE7272;" styleClass="stat-card blue-card">
+            <VBox layoutX="409.0" layoutY="11.0" prefHeight="113.0" prefWidth="154.0" spacing="8.0" style="-fx-background-color: #DE7272;" styleClass="stat-card blue-card">
                <padding>
                   <Insets bottom="18.0" left="20.0" right="20.0" top="18.0" />
                </padding>
@@ -99,7 +99,7 @@
                   <Label styleClass="card-description" text="total issued books" />
                </children>
             </VBox>
-            <VBox layoutX="596.0" layoutY="21.0" prefHeight="113.0" prefWidth="154.0" spacing="8.0" style="-fx-background-color: #DE7272;" styleClass="stat-card blue-card">
+            <VBox layoutX="596.0" layoutY="11.0" prefHeight="113.0" prefWidth="154.0" spacing="8.0" style="-fx-background-color: #DE7272;" styleClass="stat-card blue-card">
                <padding>
                   <Insets bottom="18.0" left="20.0" right="20.0" top="18.0" />
                </padding>
@@ -111,7 +111,7 @@
             </VBox>
          </children>
       </Pane>
-      <Pane layoutX="217.0" layoutY="326.0" prefHeight="57.0" prefWidth="772.0" style="-fx-background-color: #DE7272;">
+      <Pane layoutX="217.0" layoutY="296.0" prefHeight="57.0" prefWidth="772.0" style="-fx-background-color: #DE7272;">
          <children>
             <Button fx:id="btnAddmembers1" layoutX="22.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnAddmembersOnAction" prefHeight="32.0" prefWidth="97.0" style="-fx-background-color: #B1E5E6;" text="Add Members" />
             <Button fx:id="btnUpdatemembers1" layoutX="137.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnUpdatemembersOnAction" prefHeight="32.0" prefWidth="110.0" style="-fx-background-color: #B1E5E6;" text="Update Members" />
@@ -121,7 +121,7 @@
             <Button fx:id="btnBorrowingHistory1" layoutX="635.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnBorrowingHistoryOnAction" prefHeight="32.0" prefWidth="114.0" style="-fx-background-color: #B1E5E6;" text="Borrowing History" />
          </children>
       </Pane>
-      <TableView fx:id="tbllDashboardView" layoutX="217.0" layoutY="391.0" prefHeight="200.0" prefWidth="772.0">
+      <TableView fx:id="tbllDashboardView" layoutX="217.0" layoutY="401.0" prefHeight="200.0" prefWidth="772.0">
         <columns>
           <TableColumn fx:id="colBookId" prefWidth="218.0" text="Book Id" />
           <TableColumn fx:id="colBookName" prefWidth="114.0" text="Book name" />
@@ -130,5 +130,10 @@
             <TableColumn fx:id="colDueDate" prefWidth="139.0" text="Due Date" />
         </columns>
       </TableView>
+      <Label layoutX="196.0" layoutY="361.0" prefHeight="32.0" prefWidth="814.0" style="-fx-background-color: #8AD6D1;" text="Borrowed List OverView">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
