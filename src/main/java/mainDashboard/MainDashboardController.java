@@ -1,13 +1,19 @@
 package mainDashboard;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import scene.SceneManager;
 
-public class MainDashboardController {
+import java.net.URL;
+import java.util.Map;
+import java.util.ResourceBundle;
+
+public class MainDashboardController implements Initializable {
 
     @FXML
     private Button btnAddBooks;
@@ -34,22 +40,22 @@ public class MainDashboardController {
     private Button btnUpdatemembers;
 
     @FXML
-    private TableView<?> tbllDashboardView;
+    private TableView<Map<String,String>> tbllDashboardView;
 
     @FXML
-    private TableColumn<?, ?> colBookId;
+    private TableColumn<Map<String, String> ,String> colBookId;
 
     @FXML
-    private TableColumn<?, ?> colBookName;
+    private TableColumn<Map<String, String>,String> colBookName;
 
     @FXML
-    private TableColumn<?, ?> colBorrower;
+    private TableColumn<Map<String, String>, String> colBorrower;
 
     @FXML
-    private TableColumn<?, ?> colDueDate;
+    private TableColumn<Map<String, String>,String> colDueDate;
 
     @FXML
-    private TableColumn<?, ?> colIssuedate;
+    private TableColumn<Map<String, String> ,String> colIssuedate;
 
 
 
@@ -94,5 +100,17 @@ public class MainDashboardController {
         SceneManager.switchPage("/view/view_and_update_member_page.fxml");
     }
 
+    public void loadMaintabble(){
+        colBookId.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("book_id","")));
+        colBookName.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("book_name","")));
+        colBorrower.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("full_name","")));
+        colIssuedate.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("issue_date","")));
+        colDueDate.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOrDefault("due_date","")));
 
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        loadMaintabble();
+    }
 }
