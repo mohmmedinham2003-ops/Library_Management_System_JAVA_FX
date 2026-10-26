@@ -1,14 +1,11 @@
-package controllers;
+package mainDashboard;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import scene.SceneManager;
-
-import java.io.IOException;
 
 public class MainDashboardController {
 
@@ -35,6 +32,24 @@ public class MainDashboardController {
 
     @FXML
     private Button btnUpdatemembers;
+
+    @FXML
+    private TableView<?> tbllDashboardView;
+
+    @FXML
+    private TableColumn<?, ?> colBookId;
+
+    @FXML
+    private TableColumn<?, ?> colBookName;
+
+    @FXML
+    private TableColumn<?, ?> colBorrower;
+
+    @FXML
+    private TableColumn<?, ?> colDueDate;
+
+    @FXML
+    private TableColumn<?, ?> colIssuedate;
 
 
 

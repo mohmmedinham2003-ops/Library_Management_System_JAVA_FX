@@ -4,6 +4,8 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -14,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="611.0" prefWidth="1009.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainDashboardController">
+<AnchorPane prefHeight="611.0" prefWidth="1009.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDashboard.MainDashboardController">
    <children>
       <GridPane alignment="TOP_CENTER" gridLinesVisible="true" prefHeight="610.0" prefWidth="196.0" style="-fx-background-color: #B1E5E6;">
         <columnConstraints>
@@ -119,5 +121,14 @@
             <Button fx:id="btnBorrowingHistory1" layoutX="635.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnBorrowingHistoryOnAction" prefHeight="32.0" prefWidth="114.0" style="-fx-background-color: #B1E5E6;" text="Borrowing History" />
          </children>
       </Pane>
+      <TableView fx:id="tbllDashboardView" layoutX="217.0" layoutY="391.0" prefHeight="200.0" prefWidth="772.0">
+        <columns>
+          <TableColumn fx:id="colBookId" prefWidth="218.0" text="Book Id" />
+          <TableColumn fx:id="colBookName" prefWidth="114.0" text="Book name" />
+            <TableColumn fx:id="colBorrower" prefWidth="127.0" text="Borrower" />
+            <TableColumn fx:id="colIssuedate" prefWidth="173.0" text="Issue Date" />
+            <TableColumn fx:id="colDueDate" prefWidth="139.0" text="Due Date" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>
