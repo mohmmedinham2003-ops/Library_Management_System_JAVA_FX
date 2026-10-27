@@ -49,5 +49,20 @@ public class DashboardController {
         return dashboardDetails;
 
     }
+
+
+    public int loadMemberCount() {
+
+    }
+
+
+    public int LoadBookCount() {
+    }
+
+    public int LoadIssuedBookCount() {
+    }
+
+    public int LoadReturnedCount() {
+    }
 }
 
