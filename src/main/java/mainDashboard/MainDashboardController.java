@@ -126,10 +126,9 @@ public class MainDashboardController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadMaintabble();
         lblTotalMembers.setText(String.valueOf(dashboardController.loadMemberCount()));
-        lblTotalBooks.setText(String.valueOf(dashboardController.LoadBookCount()));
-        lblTotalIssueBooks.setText(String.valueOf(dashboardController.LoadIssuedBookCount()));
-        lblTotalReturnedBooks.setText(String.valueOf(dashboardController.LoadReturnedCount()));
-
+//        lblTotalBooks.setText(String.valueOf(dashboardController.LoadBookCount()));
+//        lblTotalIssueBooks.setText(String.valueOf(dashboardController.LoadIssuedBookCount()));
+//        lblTotalReturnedBooks.setText(String.valueOf(dashboardController.LoadReturnedCount()));
 
         tbllDashboardView.setItems(dashboardController.loadDetails());
     }

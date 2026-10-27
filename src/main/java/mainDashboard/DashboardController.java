@@ -38,10 +38,7 @@ public class DashboardController {
                 row.put("due_date",resultSet.getString("due_date") != null ? resultSet.getString("due_date") : "");
                 dashboardDetails.add(row);
 
-
             }
-
-
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -51,18 +48,36 @@ public class DashboardController {
     }
 
 
-    public int loadMemberCount() {
+    public ObservableList<Integer> loadMemberCount() {
+
+        ObservableList<Integer> memberCount = FXCollections.observableArrayList();
+
+        String SQL = "SELECT COUNT(*) AS total FROM members";
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()){
+            memberCount.add(resultSet.getInt("total"));
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+
+        }
+        return memberCount;
 
     }
 
 
-    public int LoadBookCount() {
-    }
-
-    public int LoadIssuedBookCount() {
-    }
-
-    public int LoadReturnedCount() {
-    }
+//    public int LoadBookCount() {
+//    }
+//
+//    public int LoadIssuedBookCount() {
+//    }
+//
+//    public int LoadReturnedCount() {
+//    }
 }
 
