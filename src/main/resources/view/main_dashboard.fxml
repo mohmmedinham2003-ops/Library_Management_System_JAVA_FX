@@ -76,7 +76,7 @@
                   <Label styleClass="card-label" text="TOTAL MEMBERS" />
                   <Label fx:id="lblTotalMembers" styleClass="card-number" text="0" />
                   <Pane prefHeight="200.0" prefWidth="200.0" />
-                  <Label styleClass="card-description" text="Registered members" />
+                  <Label styleClass="card-description" text="Registered members" textFill="#1f52ab" />
                </children>
             </VBox>
             <VBox layoutX="221.0" layoutY="-2.0" prefHeight="132.0" prefWidth="154.0" spacing="8.0" style="-fx-background-color: #DE7272;" styleClass="stat-card blue-card">
