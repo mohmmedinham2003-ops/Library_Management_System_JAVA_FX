@@ -48,9 +48,8 @@ public class DashboardController {
     }
 
 
-    public ObservableList<Integer> loadMemberCount() {
+    public int loadMemberCount() {
 
-        ObservableList<Integer> memberCount = FXCollections.observableArrayList();
 
         String SQL = "SELECT COUNT(*) AS totalMembers FROM members";
 
@@ -58,33 +57,33 @@ public class DashboardController {
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            while (resultSet.next()){
-            memberCount.add(resultSet.getInt("totalMembers"));
+            if (resultSet.next()){
+            return resultSet.getInt("totalMembers");
             }
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
 
         }
-        return memberCount;
+        return 0;
 
     }
 
-    public ObservableList<Integer> LoadBookCount() {
-        ObservableList<Integer> loadBookCountDetails = FXCollections.observableArrayList();
+    public int LoadBookCount() {
+
 
         String SQL = "SELECT COUNT(*) AS totalBooks FROM books";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
             ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()){
-                loadBookCountDetails.add(resultSet.getInt("totalBooks"));
+            if (resultSet.next()){
+                return resultSet.getInt("totalBooks");
 
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return loadBookCountDetails;
+        return 0;
     }
 
     public int LoadIssuedBookCount() {
