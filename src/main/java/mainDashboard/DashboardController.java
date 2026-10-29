@@ -87,6 +87,22 @@ public class DashboardController {
         return loadBookCountDetails;
     }
 
+    public int LoadIssuedBookCount() {
+        String SQL = "SELECT COUNT(*) FROM issue_book";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if(resultSet.next()){
+                return resultSet.getInt("total");
+
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return 0;
+    }
+
 
 //    public int LoadBookCount() {
 //    }
