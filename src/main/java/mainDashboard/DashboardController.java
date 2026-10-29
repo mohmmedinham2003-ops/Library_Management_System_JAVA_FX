@@ -52,14 +52,14 @@ public class DashboardController {
 
         ObservableList<Integer> memberCount = FXCollections.observableArrayList();
 
-        String SQL = "SELECT COUNT(*) AS total FROM members";
+        String SQL = "SELECT COUNT(*) AS totalMembers FROM members";
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()){
-            memberCount.add(resultSet.getInt("total"));
+            memberCount.add(resultSet.getInt("totalMembers"));
             }
 
         } catch (SQLException e) {
@@ -73,12 +73,12 @@ public class DashboardController {
     public ObservableList<Integer> LoadBookCount() {
         ObservableList<Integer> loadBookCountDetails = FXCollections.observableArrayList();
 
-        String SQL = "SELECT COUNT(*) FROM books";
+        String SQL = "SELECT COUNT(*) AS totalBooks FROM books";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
-                loadBookCountDetails.add(resultSet.getInt("total"));
+                loadBookCountDetails.add(resultSet.getInt("totalBooks"));
 
             }
         } catch (SQLException e) {
@@ -88,13 +88,13 @@ public class DashboardController {
     }
 
     public int LoadIssuedBookCount() {
-        String SQL = "SELECT COUNT(*) FROM issue_book";
+        String SQL = "SELECT COUNT(*) AS totalIssuedBooks FROM issue_book";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if(resultSet.next()){
-                return resultSet.getInt("total");
+                return resultSet.getInt("totalIssuedBooks");
 
             }
         } catch (SQLException e) {
@@ -103,14 +103,25 @@ public class DashboardController {
         return 0;
     }
 
+    public int LoadReturnedCount() {
 
-//    public int LoadBookCount() {
-//    }
-//
-//    public int LoadIssuedBookCount() {
-//    }
-//
-//    public int LoadReturnedCount() {
-//    }
+        String SQL = "SELECT COUNT(*) AS totalReturnedBooks FROM returned_books";
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()){
+                return resultSet.getInt("totalReturnedBooks");
+
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return 0;
+    }
+
+
 }
 
