@@ -70,6 +70,23 @@ public class DashboardController {
 
     }
 
+    public ObservableList<Integer> LoadBookCount() {
+        ObservableList<Integer> loadBookCountDetails = FXCollections.observableArrayList();
+
+        String SQL = "SELECT COUNT(*) FROM books";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                loadBookCountDetails.add(resultSet.getInt("total"));
+
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return loadBookCountDetails;
+    }
+
 
 //    public int LoadBookCount() {
 //    }
