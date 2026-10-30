@@ -1,0 +1,120 @@
+```css
+/* Main Background */
+.root {
+    -fx-background-color: #F5F7FA;
+    -fx-font-family: "Segoe UI";
+}
+
+/* Sidebar */
+.sidebar {
+    -fx-background-color: #B1E5E6;
+}
+
+.sidebar .button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #263238;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-background-radius: 8;
+}
+
+.sidebar .button:hover {
+    -fx-background-color: #8AD6D1;
+}
+
+.sidebar .button:pressed {
+    -fx-background-color: #65BDB8;
+}
+
+/* Selected Sidebar Button */
+.sidebar .selected-button {
+    -fx-background-color: #F5EFE1;
+    -fx-text-fill: #263238;
+}
+
+/* Page Header */
+.page-header {
+    -fx-background-color: #DE7272;
+    -fx-background-radius: 10 10 0 0;
+    -fx-alignment: CENTER;
+}
+
+.page-title {
+    -fx-font-size: 27px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+/* Form Container */
+.form-container {
+    -fx-background-color: white;
+    -fx-background-radius: 0 0 12 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 10, 0, 0, 3);
+}
+
+/* Form Labels */
+.form-label {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #374151;
+}
+
+/* Text Fields */
+.text-field {
+    -fx-background-color: #F8FAFC;
+    -fx-border-color: #D1D5DB;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 8 12 8 12;
+    -fx-font-size: 13px;
+}
+
+.text-field:focused {
+    -fx-border-color: #65BDB8;
+    -fx-border-width: 1.5;
+    -fx-background-color: white;
+}
+
+/* Add Button */
+.add-button {
+    -fx-background-color: #C85D65;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 7;
+    -fx-cursor: hand;
+}
+
+.add-button:hover {
+    -fx-background-color: #A9434D;
+}
+
+/* Clear Button */
+.clear-button {
+    -fx-background-color: #B1E5E6;
+    -fx-text-fill: #263238;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 7;
+    -fx-cursor: hand;
+}
+
+.clear-button:hover {
+    -fx-background-color: #8AD6D1;
+}
+
+/* Logout Button */
+.logout-button {
+    -fx-background-color: #C62828;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 7;
+    -fx-cursor: hand;
+}
+
+.logout-button:hover {
+    -fx-background-color: #A61B1B;
+}
+```
