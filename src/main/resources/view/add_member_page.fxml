@@ -14,22 +14,23 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.members.AddMemberPageController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../CSS/add_member_page.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.members.AddMemberPageController">
    <children>
       <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="506.0" prefWidth="812.0">
          <children>
-            <Pane layoutX="219.0" layoutY="129.0" prefHeight="284.0" prefWidth="601.0" style="-fx-background-color: #D8A2A2;">
+            <Pane layoutX="215.0" layoutY="103.0" prefHeight="330.0" prefWidth="601.0" style="-fx-background-color: #D8A2A2;">
                <children>
-                  <Button fx:id="btnAdd" layoutX="476.0" layoutY="220.0" mnemonicParsing="false" onAction="#btnAddOnAction" text="ADD">
+                  <Button fx:id="btnAdd" layoutX="476.0" layoutY="250.0" mnemonicParsing="false" onAction="#btnAddOnAction" text="ADD">
                      <font>
                         <Font name="System Bold Italic" size="18.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnClear" layoutX="35.0" layoutY="214.0" mnemonicParsing="false" onAction="#btnClearOnAction" text="Clear">
+                  <Button fx:id="btnClear" layoutX="35.0" layoutY="254.0" mnemonicParsing="false" onAction="#btnClearOnAction" text="Clear">
                      <font>
                         <Font name="System Bold Italic" size="18.0" />
                      </font>
                   </Button>
+                  <TextField fx:id="txtFullName" layoutX="256.0" layoutY="40.0" prefHeight="25.0" prefWidth="265.0" />
                </children>
             </Pane>
             <Pane layoutX="187.0" layoutY="-12.0" prefHeight="93.0" prefWidth="657.0" style="-fx-background-color: #D8A2A2;">
@@ -41,30 +42,29 @@
                   </Label>
                </children>
             </Pane>
-            <Label layoutX="256.0" layoutY="167.0" text="Full Name">
+            <Label layoutX="256.0" layoutY="157.0" text="Full Name">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="256.0" layoutY="204.0" text="Email: ">
+            <Label layoutX="256.0" layoutY="214.0" text="Email: ">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="256.0" layoutY="243.0" text="Phone Number: ">
+            <Label layoutX="256.0" layoutY="263.0" text="Phone Number: ">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="256.0" layoutY="287.0" text="Address: ">
+            <Label layoutX="256.0" layoutY="317.0" text="Address: ">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="txtAddress" layoutX="468.0" layoutY="288.0" prefHeight="25.0" prefWidth="265.0" />
-            <TextField fx:id="txtPhoneNumber" layoutX="468.0" layoutY="244.0" prefHeight="25.0" prefWidth="265.0" />
-            <TextField fx:id="txtEmail" layoutX="468.0" layoutY="205.0" prefHeight="25.0" prefWidth="265.0" />
-            <TextField fx:id="txtFullName" layoutX="468.0" layoutY="168.0" prefHeight="25.0" prefWidth="265.0" />
+            <TextField fx:id="txtAddress" layoutX="468.0" layoutY="308.0" prefHeight="25.0" prefWidth="265.0" />
+            <TextField fx:id="txtPhoneNumber" layoutX="468.0" layoutY="254.0" prefHeight="25.0" prefWidth="265.0" />
+            <TextField fx:id="txtEmail" layoutX="468.0" layoutY="195.0" prefHeight="25.0" prefWidth="265.0" />
          </children>
       </AnchorPane>
       <GridPane alignment="TOP_CENTER" gridLinesVisible="true" prefHeight="516.0" prefWidth="206.0" style="-fx-background-color: #B1E5E6;">

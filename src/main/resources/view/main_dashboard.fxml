@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="611.0" prefWidth="1009.0" stylesheets="@../CSS/main_dashboard.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDashboard.MainDashboardController">
+<AnchorPane prefHeight="611.0" prefWidth="1009.0" stylesheets="@../CSS/main_dashboard.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.mainDashboard.MainDashboardController">
    <children>
       <GridPane alignment="TOP_CENTER" gridLinesVisible="true" prefHeight="610.0" prefWidth="196.0" style="-fx-background-color: #B1E5E6;">
         <columnConstraints>
@@ -76,7 +76,7 @@
                   <Label styleClass="card-label" text="TOTAL MEMBERS" />
                   <Label fx:id="lblTotalMembers" styleClass="card-number" text="0" />
                   <Pane prefHeight="200.0" prefWidth="200.0" />
-                  <Label styleClass="card-description" text="Registered members" />
+                  <Label styleClass="card-description" text="Registered members" textFill="#1f52ab" />
                </children>
             </VBox>
             <VBox layoutX="221.0" layoutY="-2.0" prefHeight="132.0" prefWidth="154.0" spacing="8.0" style="-fx-background-color: #DE7272;" styleClass="stat-card blue-card">
