@@ -76,25 +76,38 @@ Stage stage = new Stage();
             new Alert(Alert.AlertType.WARNING,"Please fill the required fields").show();
 
         }
+        try{
+        boolean isAdd = addMemberController.addMember(memberDTO);
+            if (isAdd){
+                new Alert(Alert.AlertType.CONFIRMATION,"Member Added Successfully!!!").show();
 
-        if (addMemberController.addMember(txtFullName.getText(),txtEmail.getText(),txtPhoneNumber.getText(),txtAddress.getText())){
-            try {
-                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/success_message_page.fxml"))));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+            }else {
+                new Alert(Alert.AlertType.ERROR,"Faild to Add member!!!").show();
             }
-            stage.show();
-        }
-        else{
-            try {
-                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/fail_message_page.fxml"))));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            stage.show();
-
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR,"Error processing!!!");
         }
     }
+
+
+//        if (addMemberController.addMember(txtFullName.getText(),txtEmail.getText(),txtPhoneNumber.getText(),txtAddress.getText())){
+//            try {
+//                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/success_message_page.fxml"))));
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//            stage.show();
+//        }
+//        else{
+//            try {
+//                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/fail_message_page.fxml"))));
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//            stage.show();
+//
+//        }
+//    }
 
     @FXML
     void btnAddBooksOnAction(ActionEvent event) {
