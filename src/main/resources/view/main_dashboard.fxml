@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="611.0" prefWidth="1009.0" stylesheets="@../CSS/main_dashboard.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDashboard.MainDashboardController">
+<AnchorPane prefHeight="611.0" prefWidth="1009.0" stylesheets="@../CSS/main_dashboard.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.mainDashboard.MainDashboardController">
    <children>
       <GridPane alignment="TOP_CENTER" gridLinesVisible="true" prefHeight="610.0" prefWidth="196.0" style="-fx-background-color: #B1E5E6;">
         <columnConstraints>

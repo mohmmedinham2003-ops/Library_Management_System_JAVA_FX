@@ -1,4 +1,4 @@
-package mainDashboard;
+package controllers.mainDashboard;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;

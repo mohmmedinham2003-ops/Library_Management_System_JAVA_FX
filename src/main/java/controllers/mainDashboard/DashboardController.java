@@ -1,4 +1,4 @@
-package mainDashboard;
+package controllers.mainDashboard;
 
 import controllers.db.DBConnection;
 import javafx.collections.FXCollections;
