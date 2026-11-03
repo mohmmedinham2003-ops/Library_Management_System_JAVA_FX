@@ -81,9 +81,15 @@ public class AddBookPageController {
         }
 
         try{
+            boolean isAdd = addBookController.addBook(bookDTO);
+            if (isAdd){
+                new Alert(Alert.AlertType.CONFIRMATION,"Book Added Successfully!!!").show();
+            }else {
+                new Alert(Alert.AlertType.ERROR,"Book failed to Add!!!").show();
+            }
 
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            new Alert(Alert.AlertType.ERROR,"Error processing!!!");
         }
 
 //        if(addBookController.addbook(txtBookTitle.getText(),txtAuthor.getText(),txtCategory.getText(),Integer.parseInt(txtPublishedYear.getText()),Integer.parseInt(txtQuantity.getText()))){

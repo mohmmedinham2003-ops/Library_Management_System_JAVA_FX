@@ -8,7 +8,9 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class AddBookController {
-    public boolean addbook(BookDTO bookDTO) {
+
+
+    public boolean addBook(BookDTO bookDTO) {
         Connection connection = DBConnection.getInstance().getConnection();
         String SQL = "INSERT INTO books(book_title,author,category,published_year,quantity) VALUES(?, ?, ?, ?, ?)";
         try {
