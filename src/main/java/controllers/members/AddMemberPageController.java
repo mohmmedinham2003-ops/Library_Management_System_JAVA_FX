@@ -4,9 +4,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import model.MemberDTO;
 import scene.SceneManager;
 
 import java.io.IOException;
@@ -59,24 +61,53 @@ Stage stage = new Stage();
 
     @FXML
     void btnAddOnAction(ActionEvent event) {
-        if (addMemberController.addMember(txtFullName.getText(),txtEmail.getText(),txtPhoneNumber.getText(),txtAddress.getText())){
-            try {
-                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/success_message_page.fxml"))));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            stage.show();
-        }
-        else{
-            try {
-                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/fail_message_page.fxml"))));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            stage.show();
+        MemberDTO memberDTO = new MemberDTO();
 
+        memberDTO.setFullName(txtFullName.getText());
+        memberDTO.setEmail(txtEmail.getText());
+        memberDTO.setPhoneNumber(txtPhoneNumber.getText());
+        memberDTO.setAddress(txtAddress.getText());
+
+        if (memberDTO.getFullName() ==  null || memberDTO.getFullName().trim().isEmpty() ||
+            memberDTO.getEmail() == null || memberDTO.getEmail().trim().isEmpty() ||
+            memberDTO.getPhoneNumber() == null || memberDTO.getPhoneNumber().trim().isEmpty() ||
+            memberDTO.getAddress() == null || memberDTO.getAddress().trim().isEmpty()
+        ){
+            new Alert(Alert.AlertType.WARNING,"Please fill the required fields").show();
+        }
+
+        try{
+        boolean isAdd = addMemberController.addMember(memberDTO);
+            if (isAdd){
+                new Alert(Alert.AlertType.CONFIRMATION,"Member Added Successfully!!!").show();
+
+            }else {
+                new Alert(Alert.AlertType.ERROR,"Faild to Add member!!!").show();
+            }
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR,"Error processing!!!");
         }
     }
+
+
+//        if (addMemberController.addMember(txtFullName.getText(),txtEmail.getText(),txtPhoneNumber.getText(),txtAddress.getText())){
+//            try {
+//                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/success_message_page.fxml"))));
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//            stage.show();
+//        }
+//        else{
+//            try {
+//                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/fail_message_page.fxml"))));
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//            stage.show();
+//
+//        }
+//    }
 
     @FXML
     void btnAddBooksOnAction(ActionEvent event) {
@@ -122,6 +153,9 @@ Stage stage = new Stage();
 
 
     public void btnClearOnAction(ActionEvent actionEvent) {
-
+        txtFullName.clear();
+        txtEmail.clear();
+        txtPhoneNumber.clear();
+        txtAddress.clear();
     }
 }

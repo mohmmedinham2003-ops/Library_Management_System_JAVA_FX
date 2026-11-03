@@ -85,7 +85,11 @@ public class ViewAndUpdateMemberPageController implements Initializable {
 
     @FXML
     void btnClearOnAction(ActionEvent event) {
-
+        cmbSelectMember.getSelectionModel().clearSelection();
+        txtFullName.clear();
+        txtEmail.clear();
+        txtPhoneNumber.clear();
+        txtAddress.clear();
     }
 
     @FXML

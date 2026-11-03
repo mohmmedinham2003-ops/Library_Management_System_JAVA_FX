@@ -4,9 +4,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import model.BookDTO;
 import scene.SceneManager;
 
 import java.io.IOException;
@@ -62,29 +64,61 @@ public class AddBookPageController {
 
     @FXML
     void btnAddOnAction(ActionEvent event) {
-        if(addBookController.addbook(txtBookTitle.getText(),txtAuthor.getText(),txtCategory.getText(),Integer.parseInt(txtPublishedYear.getText()),Integer.parseInt(txtQuantity.getText()))){
-            try {
-                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/success_message_page.fxml"))));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            stage.show();
-        }else{
-            try {
-                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/fail_message_page.fxml"))));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            stage.show();
+        BookDTO bookDTO = new BookDTO();
+        bookDTO.setBookTitle(txtBookTitle.getText());
+        bookDTO.setAuthor(txtAuthor.getText());
+        bookDTO.setCategory(txtCategory.getText());
+        bookDTO.setPublishedyear(Integer.parseInt(txtPublishedYear.getText()));
+        bookDTO.setQuantity(Integer.parseInt(txtQuantity.getText()));
 
+        if (bookDTO.getBookTitle() == null || bookDTO.getBookTitle().trim().isEmpty() ||
+            bookDTO.getAuthor() == null || bookDTO.getAuthor().trim().isEmpty() ||
+            bookDTO.getCategory() == null || bookDTO.getCategory().trim().isEmpty() ||
+            bookDTO.getPublishedyear() == 0 ||
+            bookDTO.getQuantity() == 0
+        ){
+            new Alert(Alert.AlertType.WARNING,"Please fill the required fields").show();
         }
+
+        try{
+            boolean isAdd = addBookController.addBook(bookDTO);
+            if (isAdd){
+                new Alert(Alert.AlertType.CONFIRMATION,"Book Added Successfully!!!").show();
+            }else {
+                new Alert(Alert.AlertType.ERROR,"Book failed to Add!!!").show();
+            }
+
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.ERROR,"Error processing!!!");
+        }
+
+//        if(addBookController.addbook(txtBookTitle.getText(),txtAuthor.getText(),txtCategory.getText(),Integer.parseInt(txtPublishedYear.getText()),Integer.parseInt(txtQuantity.getText()))){
+//            try {
+//                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/success_message_page.fxml"))));
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//            stage.show();
+//        }else{
+//            try {
+//                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/fail_message_page.fxml"))));
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//            stage.show();
+//
+//        }
     }
 
 
 
     @FXML
     void btnClearOnAction(ActionEvent event) {
-
+        txtBookTitle.clear();
+        txtAuthor.clear();
+        txtCategory.clear();
+        txtPublishedYear.clear();
+        txtQuantity.clear();
     }
 
     @FXML
