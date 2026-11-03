@@ -74,8 +74,8 @@ Stage stage = new Stage();
             memberDTO.getAddress() == null || memberDTO.getAddress().trim().isEmpty()
         ){
             new Alert(Alert.AlertType.WARNING,"Please fill the required fields").show();
-
         }
+
         try{
         boolean isAdd = addMemberController.addMember(memberDTO);
             if (isAdd){
