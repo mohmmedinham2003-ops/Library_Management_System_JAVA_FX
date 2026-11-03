@@ -76,6 +76,7 @@ public class ReturnBookPageController implements Initializable {
         cmbBookId.getSelectionModel().clearSelection();
         cmbMemberId.getSelectionModel().clearSelection();
         txtPhoneNumber.clear();
+        txtAddress.clear();
         dtpBorrowedDate.setValue(null);
         dtpDueDate.setValue(null);
         dtpReturnedDate.setValue(null);

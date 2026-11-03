@@ -80,6 +80,12 @@ public class AddBookPageController {
             new Alert(Alert.AlertType.WARNING,"Please fill the required fields").show();
         }
 
+        try{
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
 //        if(addBookController.addbook(txtBookTitle.getText(),txtAuthor.getText(),txtCategory.getText(),Integer.parseInt(txtPublishedYear.getText()),Integer.parseInt(txtQuantity.getText()))){
 //            try {
 //                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/success_message_page.fxml"))));
