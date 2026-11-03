@@ -73,7 +73,12 @@ public class ReturnBookPageController implements Initializable {
 
     @FXML
     void btnClearOnAction(ActionEvent event) {
-
+        cmbBookId.getSelectionModel().clearSelection();
+        cmbMemberId.getSelectionModel().clearSelection();
+        txtPhoneNumber.clear();
+        dtpBorrowedDate.setValue(null);
+        dtpDueDate.setValue(null);
+        dtpReturnedDate.setValue(null);
     }
 
 
