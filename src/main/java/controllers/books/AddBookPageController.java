@@ -84,7 +84,11 @@ public class AddBookPageController {
 
     @FXML
     void btnClearOnAction(ActionEvent event) {
-
+        txtBookTitle.clear();
+        txtAuthor.clear();
+        txtCategory.clear();
+        txtPublishedYear.clear();
+        txtQuantity.clear();
     }
 
     @FXML

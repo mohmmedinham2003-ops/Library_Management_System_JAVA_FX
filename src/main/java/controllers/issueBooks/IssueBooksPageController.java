@@ -64,6 +64,10 @@ public class IssueBooksPageController implements Initializable {
 
     @FXML
     void btnClearOnAction(ActionEvent event) {
+        cmbSelectMember.getSelectionModel().clearSelection();
+        cmbSelectBook.getSelectionModel().clearSelection();
+        dtpIssueDate.setValue(null);
+        dtpDueDate.setValue(null);
 
     }
 

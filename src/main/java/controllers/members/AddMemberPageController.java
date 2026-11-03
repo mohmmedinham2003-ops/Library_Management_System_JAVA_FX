@@ -153,6 +153,9 @@ Stage stage = new Stage();
 
 
     public void btnClearOnAction(ActionEvent actionEvent) {
-
+        txtFullName.clear();
+        txtEmail.clear();
+        txtPhoneNumber.clear();
+        txtAddress.clear();
     }
 }
