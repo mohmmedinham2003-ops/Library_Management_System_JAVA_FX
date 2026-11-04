@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import model.ReturnBookDTO;
 import scene.SceneManager;
 
 import java.net.URL;
@@ -85,11 +86,22 @@ public class ReturnBookPageController implements Initializable {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
-        if(returnBookController.returnBooks(cmbBookId.getValue(),cmbMemberId.getValue(),txtPhoneNumber.getText(),txtAddress.getText(),dtpBorrowedDate.getValue(),dtpDueDate.getValue(),dtpReturnedDate.getValue())){
-            System.out.println("Success");
-        }else {
-            System.out.println("failed");
-        }
+        ReturnBookDTO returnBookDTO = new ReturnBookDTO();
+
+        returnBookDTO.setCmbBookId(cmbBookId.getValue());
+        returnBookDTO.setCmbMemberId(cmbMemberId.getValue());
+        returnBookDTO.setPhoneNumber(txtPhoneNumber.getText());
+        returnBookDTO.setAddress(txtAddress.getText());
+        returnBookDTO.setBorrowedDate(dtpBorrowedDate.getValue());
+        returnBookDTO.setDueDate(dtpDueDate.getValue());
+        returnBookDTO.setReturnedDate(dtpReturnedDate.getValue());
+
+
+//        if(returnBookController.returnBooks(cmbBookId.getValue(),cmbMemberId.getValue(),txtPhoneNumber.getText(),txtAddress.getText(),dtpBorrowedDate.getValue(),dtpDueDate.getValue(),dtpReturnedDate.getValue())){
+//            System.out.println("Success");
+//        }else {
+//            System.out.println("failed");
+//        }
     }
 
 
