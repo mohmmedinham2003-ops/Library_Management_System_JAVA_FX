@@ -3,6 +3,7 @@ package controllers.returnBooks;
 import controllers.db.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import model.ReturnBookDTO;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -10,18 +11,18 @@ import java.time.LocalDate;
 public class ReturnBookController {
     Connection connection = DBConnection.getInstance().getConnection();
 
-    public boolean returnBooks(int book_id, int member_id, String phone_number, String address, LocalDate borrowed_date, LocalDate due_date, LocalDate returned_date) {
+    public boolean returnBooks(ReturnBookDTO returnBookDTO) {
         String SQL = "INSERT INTO returned_books(book_id,member_id,phone_number,address,borrowed_date,due_date,returned_date) VALUES(?, ?, ?, ?, ?, ?, ?) ";
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
-            preparedStatement.setInt(1,book_id);
-            preparedStatement.setInt(2,member_id);
-            preparedStatement.setString(3,phone_number);
-            preparedStatement.setString(4,address);
-            preparedStatement.setDate(5, Date.valueOf(borrowed_date));
-            preparedStatement.setDate(6, Date.valueOf(due_date));
-            preparedStatement.setDate(7, Date.valueOf(borrowed_date));
+            preparedStatement.setInt(1,returnBookDTO.getCmbBookId());
+            preparedStatement.setInt(2,returnBookDTO.getCmbMemberId());
+            preparedStatement.setString(3,returnBookDTO.getPhoneNumber());
+            preparedStatement.setString(4,returnBookDTO.getAddress());
+            preparedStatement.setDate(5, Date.valueOf(returnBookDTO.getBorrowedDate()));
+            preparedStatement.setDate(6, Date.valueOf(returnBookDTO.getDueDate()));
+            preparedStatement.setDate(7, Date.valueOf(returnBookDTO.getReturnedDate()));
 
             preparedStatement.executeUpdate();
 

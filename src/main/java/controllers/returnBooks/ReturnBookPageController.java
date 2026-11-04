@@ -96,6 +96,22 @@ public class ReturnBookPageController implements Initializable {
         returnBookDTO.setDueDate(dtpDueDate.getValue());
         returnBookDTO.setReturnedDate(dtpReturnedDate.getValue());
 
+        if (returnBookDTO.getCmbBookId() == 0 || returnBookDTO.getCmbMemberId() == 0 ||
+                returnBookDTO.getPhoneNumber() == null || returnBookDTO.getPhoneNumber().trim().isEmpty() ||
+                returnBookDTO.getAddress() == null || returnBookDTO.getAddress().trim().isEmpty() ||
+                returnBookDTO.getBorrowedDate() == null || returnBookDTO.getDueDate() == null ||
+                returnBookDTO.getReturnedDate() == null
+        ){
+            new Alert(Alert.AlertType.WARNING,"Pls fill all the fields");
+        }
+
+        try {
+            boolean isAdd = returnBookController.returnBooks(returnBookDTO);
+
+        } catch (Exception e) {
+
+        }
+
 
 //        if(returnBookController.returnBooks(cmbBookId.getValue(),cmbMemberId.getValue(),txtPhoneNumber.getText(),txtAddress.getText(),dtpBorrowedDate.getValue(),dtpDueDate.getValue(),dtpReturnedDate.getValue())){
 //            System.out.println("Success");
