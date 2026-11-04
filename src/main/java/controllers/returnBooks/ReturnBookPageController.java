@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import model.ReturnBookDTO;
 import scene.SceneManager;
 
 import java.net.URL;
@@ -85,11 +86,43 @@ public class ReturnBookPageController implements Initializable {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
-        if(returnBookController.returnBooks(cmbBookId.getValue(),cmbMemberId.getValue(),txtPhoneNumber.getText(),txtAddress.getText(),dtpBorrowedDate.getValue(),dtpDueDate.getValue(),dtpReturnedDate.getValue())){
-            System.out.println("Success");
-        }else {
-            System.out.println("failed");
+        ReturnBookDTO returnBookDTO = new ReturnBookDTO();
+
+        returnBookDTO.setCmbBookId(cmbBookId.getValue());
+        returnBookDTO.setCmbMemberId(cmbMemberId.getValue());
+        returnBookDTO.setPhoneNumber(txtPhoneNumber.getText());
+        returnBookDTO.setAddress(txtAddress.getText());
+        returnBookDTO.setBorrowedDate(dtpBorrowedDate.getValue());
+        returnBookDTO.setDueDate(dtpDueDate.getValue());
+        returnBookDTO.setReturnedDate(dtpReturnedDate.getValue());
+
+        if (returnBookDTO.getCmbBookId() == 0 || returnBookDTO.getCmbMemberId() == 0 ||
+                returnBookDTO.getPhoneNumber() == null || returnBookDTO.getPhoneNumber().trim().isEmpty() ||
+                returnBookDTO.getAddress() == null || returnBookDTO.getAddress().trim().isEmpty() ||
+                returnBookDTO.getBorrowedDate() == null || returnBookDTO.getDueDate() == null ||
+                returnBookDTO.getReturnedDate() == null
+        ){
+            new Alert(Alert.AlertType.WARNING,"Pls fill all the fields");
         }
+
+        try {
+            boolean isAdd = returnBookController.returnBooks(returnBookDTO);
+            if (isAdd){
+                new Alert(Alert.AlertType.CONFIRMATION,"Successfully Added!!");
+            }else {
+                new Alert(Alert.AlertType.ERROR,"Failed to add!!");
+            }
+
+        } catch (Exception e) {
+                new Alert(Alert.AlertType.ERROR,"System Error!!!");
+        }
+
+
+//        if(returnBookController.returnBooks(cmbBookId.getValue(),cmbMemberId.getValue(),txtPhoneNumber.getText(),txtAddress.getText(),dtpBorrowedDate.getValue(),dtpDueDate.getValue(),dtpReturnedDate.getValue())){
+//            System.out.println("Success");
+//        }else {
+//            System.out.println("failed");
+//        }
     }
 
 
