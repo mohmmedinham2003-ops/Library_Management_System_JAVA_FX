@@ -107,9 +107,14 @@ public class ReturnBookPageController implements Initializable {
 
         try {
             boolean isAdd = returnBookController.returnBooks(returnBookDTO);
+            if (isAdd){
+                new Alert(Alert.AlertType.CONFIRMATION,"Successfully Added!!");
+            }else {
+                new Alert(Alert.AlertType.ERROR,"Failed to add!!");
+            }
 
         } catch (Exception e) {
-
+                new Alert(Alert.AlertType.ERROR,"System Error!!!");
         }
 
 
