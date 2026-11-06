@@ -108,20 +108,20 @@ public class ViewAndUpdateMemberPageController implements Initializable {
                 viewAndUpdateMembersDTO.getPhoneNumber() == null || viewAndUpdateMembersDTO.getPhoneNumber().trim().isEmpty() ||
                 viewAndUpdateMembersDTO.getAddress() == null || viewAndUpdateMembersDTO.getAddress().trim().isEmpty()
         ){
-            new Alert(Alert.AlertType.WARNING,"Pls fill all the fields!!!");
+            new Alert(Alert.AlertType.WARNING,"Pls fill all the fields!!!").show();
         }
 
         try{
 
             boolean isAdd = viewAndUpdateController.updateMember(viewAndUpdateMembersDTO);
             if (isAdd){
-                new Alert(Alert.AlertType.CONFIRMATION,"Added Successfully!!!");
+                new Alert(Alert.AlertType.CONFIRMATION,"Added Successfully!!!").show();
             }else {
-                new Alert(Alert.AlertType.ERROR,"Failed to add!!!");
+                new Alert(Alert.AlertType.ERROR,"Failed to add!!!").show();
             }
 
         } catch (Exception e) {
-            new Alert(Alert.AlertType.ERROR,"error undifined");
+            new Alert(Alert.AlertType.ERROR,"error undifined").show();
         }
 //    if(viewAndUpdateController.updateMember(cmbSelectMember.getValue(),txtFullName.getText(),txtEmail.getText(),txtPhoneNumber.getText(),txtAddress.getText())){
 //        System.out.println("success");

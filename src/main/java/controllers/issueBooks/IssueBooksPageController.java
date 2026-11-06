@@ -86,20 +86,19 @@ public class IssueBooksPageController implements Initializable {
                 issueBookDTO.getDtpDueDate() == null ||
                 issueBookDTO.getDtpIssueDate() == null
         ){
-            new Alert(Alert.AlertType.WARNING,"Pls fill all the fields!!!");
+            new Alert(Alert.AlertType.WARNING,"Pls fill all the fields!!!").show();
         }
 
         try{
-
             boolean isAdd = issueBooksController.issuebooks(issueBookDTO);
             if (isAdd){
-                new Alert(Alert.AlertType.CONFIRMATION,"Added Successfully!!!");
+                new Alert(Alert.AlertType.CONFIRMATION,"Added Successfully!!!").show();
             }else {
-                new Alert(Alert.AlertType.ERROR,"Failed to add!!!");
+                new Alert(Alert.AlertType.ERROR,"Failed to add!!!").show();
             }
 
         } catch (Exception e) {
-            new Alert(Alert.AlertType.ERROR,"error undifined");
+            new Alert(Alert.AlertType.ERROR,"error undifined").show();
         }
 
 //        if (issueBooksController.issuebooks(cmbSelectMember.getValue(),cmbSelectBook.getValue(),dtpIssueDate.getValue(),dtpDueDate.getValue())){
