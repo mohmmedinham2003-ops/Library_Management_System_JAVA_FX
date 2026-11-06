@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import model.ViewAndUpdateMembersDTO;
 import scene.SceneManager;
 
 import java.io.IOException;
@@ -94,11 +95,27 @@ public class ViewAndUpdateMemberPageController implements Initializable {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
-    if(viewAndUpdateController.updateMember(cmbSelectMember.getValue(),txtFullName.getText(),txtEmail.getText(),txtPhoneNumber.getText(),txtAddress.getText())){
-        System.out.println("success");
-    }else{
-        System.out.println("fail");
-    }
+        ViewAndUpdateMembersDTO viewAndUpdateMembersDTO = new ViewAndUpdateMembersDTO();
+        viewAndUpdateMembersDTO.setCmbmemberId(cmbSelectMember.getValue());
+        viewAndUpdateMembersDTO.setFullName(txtFullName.getText());
+        viewAndUpdateMembersDTO.setEmail(txtEmail.getText());
+        viewAndUpdateMembersDTO.setPhoneNumber(txtPhoneNumber.getText());
+        viewAndUpdateMembersDTO.setAddress(txtAddress.getText());
+
+        if (viewAndUpdateMembersDTO.getCmbmemberId() == 0 ||
+                viewAndUpdateMembersDTO.getFullName() == null || viewAndUpdateMembersDTO.getFullName().trim().isEmpty()||
+                viewAndUpdateMembersDTO.getEmail() == null || viewAndUpdateMembersDTO.getEmail().trim().isEmpty() ||
+                viewAndUpdateMembersDTO.getPhoneNumber() == null || viewAndUpdateMembersDTO.getPhoneNumber().trim().isEmpty() ||
+                viewAndUpdateMembersDTO.getAddress() == null || viewAndUpdateMembersDTO.getAddress().trim().isEmpty()
+        ){
+            new Alert(Alert.AlertType.WARNING,"Pls fill all the fields!!!");
+        }
+
+//    if(viewAndUpdateController.updateMember(cmbSelectMember.getValue(),txtFullName.getText(),txtEmail.getText(),txtPhoneNumber.getText(),txtAddress.getText())){
+//        System.out.println("success");
+//    }else{
+//        System.out.println("fail");
+//    }
     }
 
     @FXML
