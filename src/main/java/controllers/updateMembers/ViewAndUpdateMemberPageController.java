@@ -114,6 +114,11 @@ public class ViewAndUpdateMemberPageController implements Initializable {
         try{
 
             boolean isAdd = viewAndUpdateController.updateMember(viewAndUpdateMembersDTO);
+            if (isAdd){
+                new Alert(Alert.AlertType.CONFIRMATION,"Added Successfully!!!");
+            }else {
+                new Alert(Alert.AlertType.ERROR,"Failed to add!!!");
+            }
 
         } catch (Exception e) {
             new Alert(Alert.AlertType.ERROR,"error undifined");

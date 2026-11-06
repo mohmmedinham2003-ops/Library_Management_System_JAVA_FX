@@ -89,6 +89,19 @@ public class IssueBooksPageController implements Initializable {
             new Alert(Alert.AlertType.WARNING,"Pls fill all the fields!!!");
         }
 
+        try{
+
+            boolean isAdd = issueBooksController.issuebooks(issueBookDTO);
+            if (isAdd){
+                new Alert(Alert.AlertType.CONFIRMATION,"Added Successfully!!!");
+            }else {
+                new Alert(Alert.AlertType.ERROR,"Failed to add!!!");
+            }
+
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.ERROR,"error undifined");
+        }
+
 //        if (issueBooksController.issuebooks(cmbSelectMember.getValue(),cmbSelectBook.getValue(),dtpIssueDate.getValue(),dtpDueDate.getValue())){
 //            System.out.println("Success");
 //        }else{

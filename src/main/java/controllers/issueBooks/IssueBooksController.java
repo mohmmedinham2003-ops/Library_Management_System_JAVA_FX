@@ -5,6 +5,7 @@ import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import model.IssueBookDTO;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -55,15 +56,15 @@ public class IssueBooksController {
 
     }
 
-    public boolean issuebooks(int member_id, int book_id, LocalDate issue_date, LocalDate due_date) {
+    public boolean issuebooks(IssueBookDTO issueBookDTO) {
         Connection connection = DBConnection.getInstance().getConnection();
         String SQL = "INSERT INTO issue_book(member_id,book_id,issue_date,due_date) VALUES(?, ?, ?, ?) ";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
-            preparedStatement.setInt(1,member_id);
-            preparedStatement.setInt(2,book_id);
-            preparedStatement.setDate(3, Date.valueOf(issue_date));
-            preparedStatement.setDate(4, Date.valueOf(due_date));
+            preparedStatement.setInt(1,issueBookDTO.getCmbMemberId());
+            preparedStatement.setInt(2,issueBookDTO.getCmbBookId());
+            preparedStatement.setDate(3, Date.valueOf(issueBookDTO.getDtpIssueDate()));
+            preparedStatement.setDate(4, Date.valueOf(issueBookDTO.getDtpIssueDate()));
 
             preparedStatement.executeUpdate();
             return true;
