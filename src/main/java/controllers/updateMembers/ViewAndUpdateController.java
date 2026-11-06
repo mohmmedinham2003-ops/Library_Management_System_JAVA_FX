@@ -3,6 +3,7 @@ package controllers.updateMembers;
 import controllers.db.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import model.ViewAndUpdateMembersDTO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -31,15 +32,15 @@ public class ViewAndUpdateController {
 
     }
 
-    public boolean updateMember(int member_id, String full_name, String email, String phone_number, String address) {
+    public boolean updateMember(ViewAndUpdateMembersDTO viewAndUpdateMembersDTO) {
         String SQL = "UPDATE members SET full_name = ?,email = ?,phone_number = ?,address = ? WHERE member_id = ?";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
-            preparedStatement.setString(1,full_name);
-            preparedStatement.setString(2,email);
-            preparedStatement.setString(3,phone_number);
-            preparedStatement.setString(4,address);
-            preparedStatement.setInt(5,member_id);
+            preparedStatement.setString(1,viewAndUpdateMembersDTO.getFullName());
+            preparedStatement.setString(2,viewAndUpdateMembersDTO.getEmail());
+            preparedStatement.setString(3,viewAndUpdateMembersDTO.getPhoneNumber());
+            preparedStatement.setString(4,viewAndUpdateMembersDTO.getAddress());
+            preparedStatement.setInt(5,viewAndUpdateMembersDTO.getCmbmemberId());
 
             preparedStatement.executeUpdate();
             return true;

@@ -102,19 +102,19 @@ public class ReturnBookPageController implements Initializable {
                 returnBookDTO.getBorrowedDate() == null || returnBookDTO.getDueDate() == null ||
                 returnBookDTO.getReturnedDate() == null
         ){
-            new Alert(Alert.AlertType.WARNING,"Pls fill all the fields");
+            new Alert(Alert.AlertType.WARNING,"Pls fill all the fields").show();
         }
 
         try {
             boolean isAdd = returnBookController.returnBooks(returnBookDTO);
             if (isAdd){
-                new Alert(Alert.AlertType.CONFIRMATION,"Successfully Added!!");
+                new Alert(Alert.AlertType.CONFIRMATION,"Successfully Added!!").show();
             }else {
-                new Alert(Alert.AlertType.ERROR,"Failed to add!!");
+                new Alert(Alert.AlertType.ERROR,"Failed to add!!").show();
             }
 
         } catch (Exception e) {
-                new Alert(Alert.AlertType.ERROR,"System Error!!!");
+                new Alert(Alert.AlertType.ERROR,"System Error!!!").show();
         }
 
 

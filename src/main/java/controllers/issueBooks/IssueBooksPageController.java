@@ -5,10 +5,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.stage.Stage;
+import model.IssueBookDTO;
 import scene.SceneManager;
 
 import java.io.IOException;
@@ -73,11 +75,37 @@ public class IssueBooksPageController implements Initializable {
 
     @FXML
     void btnIssueOnAction(ActionEvent event) {
-        if (issueBooksController.issuebooks(cmbSelectMember.getValue(),cmbSelectBook.getValue(),dtpIssueDate.getValue(),dtpDueDate.getValue())){
-            System.out.println("Success");
-        }else{
-        System.out.println("fail");
+        IssueBookDTO issueBookDTO = new IssueBookDTO();
+        issueBookDTO.setCmbMemberId(cmbSelectMember.getValue());
+        issueBookDTO.setCmbBookId(cmbSelectBook.getValue());
+        issueBookDTO.setDtpIssueDate(dtpIssueDate.getValue());
+        issueBookDTO.setDtpIssueDate(dtpIssueDate.getValue());
+
+        if (issueBookDTO.getCmbMemberId() == 0 ||
+                issueBookDTO.getCmbBookId() == 0 ||
+                issueBookDTO.getDtpDueDate() == null ||
+                issueBookDTO.getDtpIssueDate() == null
+        ){
+            new Alert(Alert.AlertType.WARNING,"Pls fill all the fields!!!").show();
         }
+
+        try{
+            boolean isAdd = issueBooksController.issuebooks(issueBookDTO);
+            if (isAdd){
+                new Alert(Alert.AlertType.CONFIRMATION,"Added Successfully!!!").show();
+            }else {
+                new Alert(Alert.AlertType.ERROR,"Failed to add!!!").show();
+            }
+
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.ERROR,"error undifined").show();
+        }
+
+//        if (issueBooksController.issuebooks(cmbSelectMember.getValue(),cmbSelectBook.getValue(),dtpIssueDate.getValue(),dtpDueDate.getValue())){
+//            System.out.println("Success");
+//        }else{
+//        System.out.println("fail");
+//        }
 
     }
 

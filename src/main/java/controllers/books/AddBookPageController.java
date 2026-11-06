@@ -89,7 +89,7 @@ public class AddBookPageController {
             }
 
         } catch (Exception e) {
-            new Alert(Alert.AlertType.ERROR,"Error processing!!!");
+            new Alert(Alert.AlertType.ERROR,"Error processing!!!").show();
         }
 
 //        if(addBookController.addbook(txtBookTitle.getText(),txtAuthor.getText(),txtCategory.getText(),Integer.parseInt(txtPublishedYear.getText()),Integer.parseInt(txtQuantity.getText()))){
