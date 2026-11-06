@@ -111,6 +111,13 @@ public class ViewAndUpdateMemberPageController implements Initializable {
             new Alert(Alert.AlertType.WARNING,"Pls fill all the fields!!!");
         }
 
+        try{
+
+            boolean isAdd = viewAndUpdateController.updateMember(viewAndUpdateMembersDTO);
+
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.ERROR,"error undifined");
+        }
 //    if(viewAndUpdateController.updateMember(cmbSelectMember.getValue(),txtFullName.getText(),txtEmail.getText(),txtPhoneNumber.getText(),txtAddress.getText())){
 //        System.out.println("success");
 //    }else{
